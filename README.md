@@ -12,7 +12,6 @@
 
 | Namn | Ansvarsområde | GitHub |
 |------|----------------|--------|
-
 | Thelma Mattsson | Ansvarsområde skriver vi här | [@ThelmaMattsson](https://github.com/ThelmaMattsson) |
 | Kevin Lundgren | Ansvarsområde | [@toobi-jpg](https://github.com/toobi-jpg) |
 | Hanna Sahlberg | Ansvarsområde | [@hannasahlberg](https://github.com/hannasahlberg) |
