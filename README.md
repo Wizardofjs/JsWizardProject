@@ -1,6 +1,6 @@
 # JsWizardProject
 
-
+<img src="https://avatars.githubusercontent.com/u/207596941?s=400&u=9dfaaaa26c2964be8ef832d9259e938a6efd5d46&v=4" width="200"/>
 
 # 💻 Skolprojekt – Webbplats 2025 - Hämtar användardata från API - F25D Grupparbete. 
 
