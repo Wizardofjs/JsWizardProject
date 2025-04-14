@@ -12,11 +12,12 @@
 
 | Namn | Ansvarsområde | GitHub |
 |------|----------------|--------|
-| Tom Larsson | Ansvarsområode skriver vi här | [@tombenrex](https://github.com/tombenrex) |
-| Thelma Mattsson | Ansvarsområode skriver vi här| [@ThelmaMattsson](https://github.com/ThelmaMattsson) |
-| Kevin Lundgren | Ansvarsområode skriver vi här | [@toobi-jpg](https://github.com/toobi-jpg) |
-| Hanna Sahlberg | Ansvarsområode skriver vi här | [@hannasahlberg](https://github.com/hannasahlberg) |
-| Alexander Simonsen | Ansvarsområode skriver vi här | [@Tomshi-123](https://github.com/Tomshi-123) |
+
+| Thelma Mattsson | Ansvarsområde skriver vi här | [@ThelmaMattsson](https://github.com/ThelmaMattsson) |
+| Kevin Lundgren | Ansvarsområde | [@toobi-jpg](https://github.com/toobi-jpg) |
+| Hanna Sahlberg | Ansvarsområde | [@hannasahlberg](https://github.com/hannasahlberg) |
+| Alexander Simonsen | Ansvarsområde | [@Tomshi-123](https://github.com/Tomshi-123) |
+| Tom Larsson | Ansvarsområde | [@tombenrex](https://github.com/tombenrex) |
 
 ---
 
