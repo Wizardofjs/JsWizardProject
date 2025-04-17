@@ -4,12 +4,12 @@ function getDataFromSessionStorage(key) {
 }
 
 export function showPosts() {
-  const posts = getDataFromSessionStorage("posts");
+  const posts = getDataFromSessionStorage('posts');
 
   if (posts.length > 0) {
-    const postsContainer = document.querySelector(".post");
+    const postsContainer = document.querySelector('.post');
 
-    postsContainer.innerHTML = "";
+    postsContainer.innerHTML = '';
 
     // Count the number of posts per user
     // Track post counts for each user
@@ -23,13 +23,13 @@ export function showPosts() {
       // Increment the count for the user
       postCounts[post.userId] += 1;
 
-      const article = document.createElement("article");
-      article.classList.add("post");
+      const article = document.createElement('article');
+      article.classList.add('post');
 
-      const header = document.createElement("header");
+      const header = document.createElement('header');
 
       /* Tillfälligt för att se vilken användare som har vilken post */
-      const h2 = document.createElement("h2");
+      const h2 = document.createElement('h2');
       /*  h2.textContent = `Användare: ${post.userId} > post: ${post.id}`; */
       h2.textContent = ` ${post.userId} user | post:${
         postCounts[post.userId]
@@ -38,14 +38,14 @@ export function showPosts() {
 
       article.appendChild(header);
 
-      const pContent = document.createElement("p");
+      const pContent = document.createElement('p');
       // Replace \n with <br> to preserve line breaks in the body
-      pContent.innerHTML = post.body.replace(/\n/g, "<br>");
+      pContent.innerHTML = post.body.replace(/\n/g, '<br>');
       article.appendChild(pContent);
 
       postsContainer.appendChild(article);
     });
   } else {
-    console.log("No posts data available in sessionStorage.");
+    console.log('No posts data available in sessionStorage.');
   }
 }
