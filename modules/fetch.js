@@ -1,5 +1,5 @@
-import { showPosts } from "./posts.js";
-import { loadUsers } from "./user.js";
+import { showPosts } from './posts.js';
+import { loadUsers } from './user.js';
 
 async function fetchData(url) {
   const response = await fetch(url);
@@ -7,10 +7,18 @@ async function fetchData(url) {
 }
 
 export async function fetchAndStoreData() {
-  const postsData = await fetchData('https://jsonplaceholder.typicode.com/posts');
-  const commentsData = await fetchData('https://jsonplaceholder.typicode.com/comments');
-  const todosData = await fetchData('https://jsonplaceholder.typicode.com/todos');
-  const usersData = await fetchData('https://jsonplaceholder.typicode.com/users');
+  const postsData = await fetchData(
+    'https://jsonplaceholder.typicode.com/posts'
+  );
+  const commentsData = await fetchData(
+    'https://jsonplaceholder.typicode.com/comments'
+  );
+  const todosData = await fetchData(
+    'https://jsonplaceholder.typicode.com/todos'
+  );
+  const usersData = await fetchData(
+    'https://jsonplaceholder.typicode.com/users'
+  );
 
   if (postsData) {
     sessionStorage.setItem('posts', JSON.stringify(postsData));
