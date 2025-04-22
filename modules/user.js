@@ -1,15 +1,17 @@
 //Importerar fetchUsers från fetch modulen
-import { fetchUsers } from './fetch.js';
+import { getDataFromSessionStorage } from './fetch.js';
+
 //Skapar en async funktion loadUsers()
-export async function loadUsers(){
+export function loadUsers(){
     try{
         //Tillderar variabler
-        const users = await fetchUsers;
-        const userDiv = document.querySelector('.user-div');
+        const users = getDataFromSessionStorage('users');
+        const userDiv = document.querySelector('.others-div');
         //Loopar igenom users och skapar element i html
         users.forEach(user => {
             const userElement = document.createElement('div');
-            userElement.textContent = `${user.name}, ${user.username}, ${user.email}`
+            userElement.classList.add('other-user');
+            userElement.textContent = `${user.name}`
             userDiv.appendChild(userElement);
         });
         //Fångar eventuella errors 
