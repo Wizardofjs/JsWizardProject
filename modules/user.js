@@ -5,7 +5,7 @@ import { getDataFromSessionStorage } from './fetch.js';
 export async function loadUsers(){
     try{
         //Tillderar variabler
-        const users = getDataFromSessionStorage('user');
+        const users = getDataFromSessionStorage('users');
         const userDiv = document.querySelector('.user-div');
         //Loopar igenom users och skapar element i html
         users.forEach(user => {
