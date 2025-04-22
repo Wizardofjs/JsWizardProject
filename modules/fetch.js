@@ -1,4 +1,5 @@
 import { showPosts } from "./posts.js";
+import { loadUsers } from "./user.js";
 
 async function fetchData(url) {
   const response = await fetch(url);
