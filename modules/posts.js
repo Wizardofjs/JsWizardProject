@@ -5,7 +5,7 @@ export function showPosts() {
   const posts = getDataFromSessionStorage('posts');
 
   if (posts.length > 0) {
-    const postsContainer = document.querySelector('.post');
+    const postsContainer = document.querySelector('.feed-div');
     postsContainer.innerHTML = '';
 
     // Object för att hålla koll på vilken användare
@@ -25,6 +25,10 @@ export function showPosts() {
     uniquePosts.forEach((post) => {
       const article = document.createElement('article');
       article.classList.add('post');
+
+      // Varje artikel får ett user och post ID
+      article.setAttribute('post-id', post.id);
+      article.setAttribute('user-id', post.userId);
 
       const header = document.createElement('header');
       const h2 = document.createElement('h2');
