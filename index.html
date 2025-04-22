@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enkel Layout</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Wizards</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
     <div class="container">
-      <div class="header">Header</div>
-      <div class="user-div">Användarinfo</div>
-      <div class="feed-div">
-        <div class="post">Post exempel</div>
-      </div>
-      <div class="others-div">
-        <div class="other-user">User</div>
-      </div>
+        <div class="header"><i id="hat" class="fa-solid fa-hat-wizard"></i>Wizards<i class="fa-solid fa-wand-sparkles"></i></div>
+        <div class="user-div">Användarinfo</div>
+        <div class="feed-div">
+
+            <article class="post">Post exempel<div class="post-comments">
+                    <div class="comment">comment example</div>
+                    <div class="comment">comment example</div>  
+
+                </div>
+            </article>
+
+            <article class="post">Post exempel<div class="post-comments">
+                <div class="comment">comment example</div> 
+                <div class="comment">comment example</div>  
+                <div class="comment">comment example</div>  
+                <div class="comment">comment example</div>                 
+            </div>
+            </article>
+
+        </div>
+        <div class="others-div">
+            <div class="other-user">User</div>
+            <div class="other-user">User</div>
+        </div>
     </div>
 
     <script src="modules/main.js" type="module"></script>
-  </body>
+</body>
 </html>
