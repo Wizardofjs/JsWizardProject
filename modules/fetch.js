@@ -26,6 +26,7 @@ export async function fetchAndStoreData() {
     sessionStorage.setItem("comments", JSON.stringify(commentsData));
   if (todosData) sessionStorage.setItem("todos", JSON.stringify(todosData));
   if (usersData) sessionStorage.setItem("users", JSON.stringify(usersData));
+  loadUsers();
 
   console.log("Data fetched and stored in sessionStorage");
 }
