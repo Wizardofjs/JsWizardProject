@@ -10,7 +10,7 @@ export async function loadUsers(){
         //Loopar igenom users och skapar element i html
         users.forEach(user => {
             const userElement = document.createElement('div');
-            userElement.textContent = `${user.name}, ${user.username}, ${user.email}`
+            userElement.textContent = `${user.name}`
             userDiv.appendChild(userElement);
         });
         //Fångar eventuella errors 
