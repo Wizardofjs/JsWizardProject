@@ -1,3 +1,3 @@
-import { fetchData } from "./fetch.js";
+import { fetchAndStoreData } from './fetch.js';
 
-fetchData();
+fetchAndStoreData();
