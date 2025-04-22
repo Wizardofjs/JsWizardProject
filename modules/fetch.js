@@ -5,11 +5,6 @@ async function fetchData(url) {
   return response.ok ? response.json() : null;
 }
 
-export function getDataFromSessionStorage(key) {
-  const data = sessionStorage.getItem(key);
-  return data ? JSON.parse(data) : [];
-}
-
 export async function fetchAndStoreData() {
   const postsData = await fetchData(
     'https://jsonplaceholder.typicode.com/posts'
