@@ -36,7 +36,7 @@ export function showPosts() {
 
       // Hitta användarnamn baserat på userId
       const user = users.find((user) => user.id === post.userId);
-      const username = user ? user.name : ` ${post.user.name}`;
+      const username = user ? user.name : 'Okänd användare';
 
       h2.textContent = `${username}`;
       header.appendChild(h2);
