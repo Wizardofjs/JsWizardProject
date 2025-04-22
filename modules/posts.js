@@ -3,6 +3,7 @@ import { getDataFromSessionStorage } from './fetch.js';
 //Funktion för att visa första användare och dess inlägg
 export function showPosts() {
   const posts = getDataFromSessionStorage('posts');
+  const users = getDataFromSessionStorage('users');
 
   if (posts.length > 0) {
     const postsContainer = document.querySelector('.feed-div');
@@ -33,8 +34,11 @@ export function showPosts() {
       const header = document.createElement('header');
       const h2 = document.createElement('h2');
 
-      /* Bara för att se vilken användare och vilken post, ta bort vid senare tillfälle */
-      h2.textContent = `User: ${post.userId} | Post ID: ${post.id}`;
+      // Hitta användarnamn baserat på userId
+      const user = users.find((user) => user.id === post.userId);
+      const username = user ? user.name : `User ${post.userId}`;
+
+      h2.textContent = `${username}`;
       header.appendChild(h2);
       article.appendChild(header);
 
