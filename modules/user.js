@@ -6,7 +6,7 @@ export async function loadUsers(){
     try{
         //Tillderar variabler
         const users = getDataFromSessionStorage('users');
-        const userDiv = document.querySelector('.user-div');
+        const userDiv = document.querySelector('.others-div');
         //Loopar igenom users och skapar element i html
         users.forEach(user => {
             const userElement = document.createElement('div');
