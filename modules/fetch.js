@@ -31,16 +31,11 @@ export async function fetchAndStoreData() {
   showPosts();
   /* Tillfällig lösning för att köra funktion efter att fetch sparats i session */
   if (commentsData)
-<<<<<<< HEAD
+
     sessionStorage.setItem("comments", JSON.stringify(commentsData));
   if (todosData) sessionStorage.setItem("todos", JSON.stringify(todosData));
   if (usersData) sessionStorage.setItem("users", JSON.stringify(usersData));
   loadUsers();
-=======
-    sessionStorage.setItem('comments', JSON.stringify(commentsData));
-  if (todosData) sessionStorage.setItem('todos', JSON.stringify(todosData));
-  if (usersData) sessionStorage.setItem('users', JSON.stringify(usersData));
->>>>>>> c4379e295f4df6df7959a358875d92fa106a5f95
 
   console.log('Data fetched and stored in sessionStorage');
 }
