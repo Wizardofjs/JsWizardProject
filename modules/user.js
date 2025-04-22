@@ -10,6 +10,10 @@ export function loadUsers(){
         //Loopar igenom users och skapar element i html
         users.forEach(user => {
             const userElement = document.createElement('div');
+            const colors = ['green', 'gray'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            userElement.classList.add(randomColor);
+            
             userElement.classList.add('other-user');
             userElement.textContent = `${user.name}`
             userDiv.appendChild(userElement);
