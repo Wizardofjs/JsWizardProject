@@ -1,11 +1,11 @@
 //Importerar fetchUsers från fetch modulen
 import { fetchUsers } from './fetch.js';
 //Skapar en async funktion loadUsers()
-async function loadUsers(){
+export async function loadUsers(){
     try{
         //Tillderar variabler
         const users = await fetchUsers;
-        const userDiv = document.querySelector('user-div');
+        const userDiv = document.querySelector('.user-div');
         //Loopar igenom users och skapar element i html
         users.forEach(user => {
             const userElement = document.createElement('div');
@@ -17,5 +17,3 @@ async function loadUsers(){
         console.log('Fel vid hämtning av användare' + error);
     }
 }
-
-loadUsers();
