@@ -10,7 +10,7 @@ export function loadUsers(){
         //Loopar igenom users och skapar element i html
         users.forEach(user => {
             const userElement = document.createElement('div');
-            userElement.classList.add('.other-user');
+            userElement.classList.add('other-user');
             userElement.textContent = `${user.name}, ${user.username}, ${user.email}`
             userDiv.appendChild(userElement);
         });
