@@ -29,3 +29,8 @@ export async function fetchAndStoreData() {
 
   console.log('Data fetched and stored in sessionStorage');
 }
+
+export function getDataFromSessionStorage(key) {
+  const data = sessionStorage.getItem(key);
+  return data ? JSON.parse(data) : [];
+}
