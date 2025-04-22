@@ -1,8 +1,7 @@
+import { getDataFromSessionStorage } from './fetch.js';
+
 // Hämta post från session storage
-function getDataFromSessionStorage(key) {
-  const data = sessionStorage.getItem(key);
-  return data ? JSON.parse(data) : [];
-}
+
 //Funktion för att visa första användare och dess inlägg
 export function showPosts() {
   const posts = getDataFromSessionStorage('posts');
