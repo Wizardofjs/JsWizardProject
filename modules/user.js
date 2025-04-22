@@ -11,7 +11,7 @@ export function loadUsers(){
         users.forEach(user => {
             const userElement = document.createElement('div');
             userElement.classList.add('other-user');
-            userElement.textContent = `${user.name}, ${user.username}, ${user.email}`
+            userElement.textContent = `${user.name}`
             userDiv.appendChild(userElement);
         });
         //Fångar eventuella errors 
