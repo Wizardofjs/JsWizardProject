@@ -153,6 +153,10 @@ body {
     overflow-y: auto;
 }
 
+.others-div button{
+    width: 100%;
+}
+
 .other-user {
     font-family: "Poppins", sans-serif;
     display: flex;
