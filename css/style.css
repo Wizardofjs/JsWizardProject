@@ -7,23 +7,22 @@
 }
 
 body {
-    background-color: #072349; 
+    background: linear-gradient(135deg, #0a1a3d, #1b2e5c);
     font-family: "Poppins", sans-serif;
-    color: #333;
+    color: #e0e0e0;
     min-height: 100vh;
-    padding: 0; 
+    padding: 0;
 }
-
 
 .container {
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 3fr 1fr;
-    width: 100vw; 
-    height: 100vh; 
+    width: 100vw;
+    height: 100vh;
     gap: 10px;
-    background: #043263;
-    border-radius: 0; 
+    background: #021a3f;
+    border-radius: 0;
 }
 
 /* Header */
@@ -34,52 +33,58 @@ body {
     align-items: center;
     grid-column: 1 / -1;
     padding: 15px;
-    background-color: #1c2a5d; 
+    background: linear-gradient(90deg, #1a2a5a, #2e3f7a);
     font-size: 1.8rem;
-    color: white;
+    color: #f0f0f0;
     font-weight: 700;
     gap: 8px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 .header i {
     font-size: 1.4rem;
-    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)); 
+    color: #ffd700;
+    filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
     transition: transform 0.2s ease;
 }
 
 .header i:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
 
 /* User-div */
 .user-div {
     grid-column: 1;
     padding: 15px;
-    background-color: #dddede;
-    box-shadow: 1px 1px 10px 1px #00000053; 
+    background: #2a3a6a;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
     overflow-y: auto;
 }
 
 .user-ui {
     padding: 15px;
-    background: #f8f8f8; 
+    background: #3a4a8a;
     border-radius: 8px;
     text-align: left;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.user-ui:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
 
 .user-ui i.fa-user {
     font-size: 2.5rem;
-    color: #1D9BF0;
+    color: #ffd700;
     margin-right: 10px;
     vertical-align: middle;
-    filter: drop-shadow(0 0 3px rgba(29, 155, 240, 0.5)); 
+    filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
 }
 
 .user-ui h2 {
     font-size: 1.5rem;
-    color: #333;
+    color: #f0f0f0;
     display: inline-block;
     margin-bottom: 8px;
     font-weight: 700;
@@ -87,13 +92,13 @@ body {
 
 .user-ui p {
     font-size: 0.95rem;
-    color: #555;
+    color: #d0d0d0;
     margin: 6px 0;
     line-height: 1.4;
 }
 
 .user-ui p a {
-    color: #1D9BF0;
+    color: #ffd700;
     text-decoration: none;
 }
 
@@ -103,53 +108,56 @@ body {
 
 /* Feed-div */
 .feed-div {
+    color: black;
     grid-column: 2;
     padding: 15px;
-    background-color: #ffffff;
+    background: transparent;
     overflow-y: auto;
 }
 
 .post {
     display: flex;
     flex-direction: column;
-    border: 1px solid #1d9cf01e; 
     padding: 15px;
-    background-color: #1d9cf010; 
+    background: rgb(177, 203, 235);
     margin: 25px 0;
-    box-shadow: 1px 1px 8px 1px #0c517f7a; 
-
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 
+.post:hover {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+}
 
 .post-comments {
-    border-top: 1px solid rgba(20, 20, 61, 0.541); 
+    border-top: 1px solid rgba(20, 20, 61, 0.3);
     margin-top: 10px;
     padding-top: 10px;
-    background-color: #0c517f65; 
-    border-radius: 0 0 8px 8px; 
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 0 0 8px 8px;
 }
 
 .comment {
     margin-top: 5px;
-    color: white;
-    border: 1px solid #1d9cf01e; 
+    color: #ffffff;
+    border: 1px solid rgba(255, 215, 0, 0.1);
     padding: 10px;
-    background-color: #185a87b8; 
+    background: rgba(35, 56, 69, 0.607);
     border-radius: 5px;
     font-size: 0.9rem;
     transition: background 0.2s ease;
 }
 
 .comment:hover {
-    background-color: #1D9BF0; 
+    background: rgba(255, 215, 0, 0.2);
 }
 
-
+/* Others-div */
 .others-div {
     grid-column: 3;
     padding: 15px;
-    background-color: #dddede;
-    box-shadow: 1px 1px 10px 1px #00000053; 
+    background: #2a3a6a;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
     overflow-y: auto;
 }
 
@@ -157,18 +165,18 @@ body {
     font-family: "Poppins", sans-serif;
     display: flex;
     align-items: center;
-    border: 1px solid #1d9cf01e; 
+    border: 1px solid rgba(255, 215, 0, 0.1);
     padding: 10px;
-    background-color: #ffffff; 
+    background: #3a4a8a;
     border-radius: 5px;
     margin: 8px 0;
     gap: 8px;
     cursor: pointer;
-    transition: background-color 0.1s ease;
+    transition: background 0.2s ease;
 }
 
 .other-user:hover {
-    background-color: #55a0d145; 
+    background: rgba(255, 215, 0, 0.2);
 }
 
 .other-user::before {
@@ -179,11 +187,11 @@ body {
 }
 
 .other-user.green::before {
-    color: rgb(1, 212, 26); 
+    color: rgb(1, 212, 26);
 }
 
 .other-user.gray::before {
-    color: rgb(61, 61, 61); 
+    color: rgb(61, 61, 61);
 }
 
 /* Responsive design */
