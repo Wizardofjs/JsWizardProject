@@ -7,92 +7,97 @@
 }
 
 body {
-  background-color: #072349;
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  min-height: 100vh;
-  padding: 0;
+    background: linear-gradient(135deg, #0a1a3d, #1b2e5c);
+    font-family: "Poppins", sans-serif;
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 0;
 }
 
 .container {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  grid-template-columns: 1fr 3fr 1fr;
-  width: 100vw;
-  height: 100vh;
-  gap: 10px;
-  background: #043263;
-  border-radius: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
+    width: 100vw;
+    height: 100vh;
+    gap: 10px;
+    background: #021a3f;
+    border-radius: 0;
 }
 
 /* Header */
 .header {
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-column: 1 / -1;
-  padding: 15px;
-  background-color: #1c2a5d;
-  font-size: 1.8rem;
-  color: white;
-  font-weight: 700;
-  gap: 8px;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / -1;
+    padding: 15px;
+    background: linear-gradient(90deg, #1a2a5a, #2e3f7a);
+    font-size: 1.8rem;
+    color: #f0f0f0;
+    font-weight: 700;
+    gap: 8px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 20px 20px rgba(60, 60, 145, 0.878);
 }
 
 .header i {
-  font-size: 1.4rem;
-  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
-  transition: transform 0.2s ease;
+    font-size: 1.4rem;
+    color: #ffd700;
+    filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+    transition: transform 0.2s ease;
 }
 
 .header i:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 /* User-div */
 .user-div {
-  grid-column: 1;
-  padding: 15px;
-  background-color: #dddede;
-  box-shadow: 1px 1px 10px 1px #00000053;
-  overflow-y: auto;
+    grid-column: 1;
+    padding: 15px;
+    background: #2a3a6a;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
+    overflow-y: auto;
 }
 
 .user-ui {
-  padding: 15px;
-  background: #f8f8f8;
-  border-radius: 8px;
-  text-align: left;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 15px;
+    background: #3a4a8a;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+
+
 .user-ui i.fa-user {
-  font-size: 2.5rem;
-  color: #1d9bf0;
-  margin-right: 10px;
-  vertical-align: middle;
-  filter: drop-shadow(0 0 3px rgba(29, 155, 240, 0.5));
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-right: 10px;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
 }
 
 .user-ui h2 {
-  font-size: 1.5rem;
-  color: #333;
-  display: inline-block;
-  margin-bottom: 8px;
-  font-weight: 700;
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
 .user-ui p {
-  font-size: 0.95rem;
-  color: #555;
-  margin: 6px 0;
-  line-height: 1.4;
+    font-size: 0.95rem;
+    color: #d0d0d0;
+    margin: 6px 0;
+    line-height: 1.4;
 }
 
 .user-ui p a {
-  color: #1d9bf0;
-  text-decoration: none;
+    color: #ffd700;
+    text-decoration: none;
 }
 
 .user-ui p a:hover {
@@ -101,51 +106,57 @@ body {
 
 /* Feed-div */
 .feed-div {
-  grid-column: 2;
-  padding: 15px;
-  background-color: #ffffff;
-  overflow-y: auto;
+    color: black;
+    grid-column: 2;
+    padding: 15px;
+    background: transparent;
+    overflow-y: auto;
 }
 
 .post {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #1d9cf01e;
-  padding: 15px;
-  background-color: #1d9cf010;
-  margin: 25px 0;
-  box-shadow: 1px 1px 8px 1px #0c517f7a;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background: rgb(177, 203, 235);
+    margin: 25px 0;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.post:hover {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
 }
 
 .post-comments {
-  border-top: 1px solid rgba(20, 20, 61, 0.541);
-  margin-top: 10px;
-  padding-top: 10px;
-  background-color: #0c517f65;
-  border-radius: 0 0 8px 8px;
+    border-top: 1px solid rgba(20, 20, 61, 0.3);
+    margin-top: 10px;
+    padding-top: 10px;
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 0 0 8px 8px;
 }
 
 .comment {
-  margin-top: 5px;
-  color: white;
-  border: 1px solid #1d9cf01e;
-  padding: 10px;
-  background-color: #185a87b8;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  transition: background 0.2s ease;
+    margin-top: 5px;
+    color: #ffffff;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    padding: 10px;
+    background: rgba(35, 56, 69, 0.607);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
 }
 
 .comment:hover {
-  background-color: #1d9bf0;
+    background: rgba(255, 215, 0, 0.2);
 }
 
+/* Others-div */
 .others-div {
-  grid-column: 3;
-  padding: 15px;
-  background-color: #dddede;
-  box-shadow: 1px 1px 10px 1px #00000053;
-  overflow-y: auto;
+    grid-column: 3;
+    padding: 15px;
+    background: #2a3a6a;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
+    overflow-y: auto;
 }
 
 .others-div button {
@@ -153,36 +164,36 @@ body {
 }
 
 .other-user {
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  align-items: center;
-  border: 1px solid #1d9cf01e;
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  margin: 8px 0;
-  gap: 8px;
-  cursor: pointer;
-  transition: background-color 0.1s ease;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    padding: 10px;
+    background: #3a4a8a;
+    border-radius: 5px;
+    margin: 8px 0;
+    gap: 8px;
+    transition: background 0.2s ease;
 }
 
 .other-user:hover {
-  background-color: #55a0d145;
+    background: rgba(245, 228, 134, 0.526);
+    box-shadow: 0px 0px 20px 2px rgba(238, 238, 196, 0.558);
 }
 
 .other-user::before {
-  content: '\f007';
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  font-size: 1.1rem;
+    content: "\f007";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1.1rem;
 }
 
 .other-user.green::before {
-  color: rgb(1, 212, 26);
+    color: rgb(1, 212, 26);
 }
 
 .other-user.gray::before {
-  color: rgb(61, 61, 61);
+    color: rgb(61, 61, 61);
 }
 
 /* Responsive design */
