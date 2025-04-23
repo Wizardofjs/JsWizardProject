@@ -1,3 +1,11 @@
-import { fetchData } from "./fetch.js";
+import { fetchAndStoreData } from './fetch.js';
+import { showPosts } from './posts.js';
+import { loadUsers } from './user.js';
 
-fetchData();
+async function init() {
+  await fetchAndStoreData();
+  loadUsers();
+  showPosts();
+}
+
+init();
