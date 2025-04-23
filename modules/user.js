@@ -19,9 +19,9 @@ export function loadUsers(){
             userElement.textContent = `${user.name}`;
             userDiv.appendChild(userElement);
             //Skapar en eventlyssnare som anropar en funktion
-            userElement.addEventListener('click', userInfo => {
+            userElement.addEventListener('click', () => {
                 showUserDetails(user);
-                renderTodos(user.userId);
+                renderTodos(user.id);
             })
 
         });
@@ -37,4 +37,3 @@ function showUserDetails(user){
     userDiv.innerHTML = `<i class="fa-solid fa-user"></i><br> <h2>${user.name}</h2><br> <p>Username: ${user.username}<br>Email: ${user.email}</p>`
 
 }
-
