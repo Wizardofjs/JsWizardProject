@@ -148,6 +148,10 @@ body {
   overflow-y: auto;
 }
 
+.others-div button {
+  width: 100%;
+}
+
 .other-user {
   font-family: 'Poppins', sans-serif;
   display: flex;
@@ -240,15 +244,18 @@ body {
     font-size: 1.3rem;
   }
 }
+/* Styla detta!!!!.......... */
 .todos-item {
   display: flex;
   align-items: center;
   height: auto;
   margin: 10px 0px;
 }
+/* storlek på checkmark */
 .todos-item i {
   font-size: 24px;
 }
 .todos-title {
   margin: 0;
 }
+/* .................... */

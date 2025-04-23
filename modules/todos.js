@@ -8,15 +8,8 @@ export async function renderTodos(userId) {
     data.forEach((item) => {
       const todosItem = document.createElement('div');
       todosItem.classList.add('todos-item');
-      todosDiv.appendChild(todosItem);
 
       const todosCheckbox = document.createElement('i');
-      if (item.completed) {
-        todosCheckbox.className = 'bx bx-checkbox-checked';
-      } else {
-        todosCheckbox.className = 'bx bx-checkbox';
-      }
-      todosItem.appendChild(todosCheckbox);
 
       item.completed
         ? (todosCheckbox.className = 'bx bx-checkbox-checked')
@@ -31,7 +24,6 @@ export async function renderTodos(userId) {
       todosItem.appendChild(todosTitle);
     });
   } catch (error) {
-    console.log('Error to render todos', error);
     console.error('Error to render todos', error);
   }
 }
