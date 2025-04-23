@@ -36,7 +36,7 @@ export function showPosts() {
 
       // Hitta användarnamn baserat på userId
       const user = users.find((user) => user.id === post.userId);
-      const username = user ? user.name : `User ${post.userId}`;
+      const username = user ? user.name : 'Okänd användare';
 
       h2.textContent = `${username}`;
       header.appendChild(h2);
@@ -47,6 +47,15 @@ export function showPosts() {
       article.appendChild(pContent);
 
       postsContainer.appendChild(article);
+
+      const commentsContainer = document.createElement('div');
+      commentsContainer.classList.add('post-comments');
+      commentsContainer.setAttribute('data-post-id', post.id);
+      commentsContainer.innerHTML = `
+      <div class='comment'>exempel</div>
+      <div class='comment'>exempel</div>
+    `;
+      article.appendChild(commentsContainer);
     });
   } else {
     console.log('No posts data available in sessionStorage.');

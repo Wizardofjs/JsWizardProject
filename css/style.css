@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -101,7 +101,7 @@ body {
 }
 
 .user-ui p a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Feed-div */
@@ -159,6 +159,10 @@ body {
     overflow-y: auto;
 }
 
+.others-div button {
+  width: 100%;
+}
+
 .other-user {
     font-family: "Poppins", sans-serif;
     display: flex;
@@ -195,60 +199,75 @@ body {
 
 /* Responsive design */
 @media (max-width: 900px) {
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto;
-        height: auto;
-        gap: 8px;
-    }
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    height: auto;
+    gap: 8px;
+  }
 
-    .user-div,
-    .feed-div,
-    .others-div {
-        grid-column: 1;
-    }
+  .user-div,
+  .feed-div,
+  .others-div {
+    grid-column: 1;
+  }
 
-    .header {
-        font-size: 1.5rem;
-        padding: 12px;
-    }
+  .header {
+    font-size: 1.5rem;
+    padding: 12px;
+  }
 
-    .user-ui h2 {
-        font-size: 1.3rem;
-    }
+  .user-ui h2 {
+    font-size: 1.3rem;
+  }
 
-    .post {
-        margin: 8px 0;
-    }
+  .post {
+    margin: 8px 0;
+  }
 }
 
 @media (max-width: 500px) {
-    body {
-        padding: 0;
-    }
+  body {
+    padding: 0;
+  }
 
-    .container {
-        gap: 5px;
-    }
+  .container {
+    gap: 5px;
+  }
 
-    .user-div,
-    .feed-div,
-    .others-div {
-        padding: 10px;
-    }
+  .user-div,
+  .feed-div,
+  .others-div {
+    padding: 10px;
+  }
 
-    .user-ui,
-    .post {
-        padding: 10px;
-    }
+  .user-ui,
+  .post {
+    padding: 10px;
+  }
 
-    .user-ui p,
-    .comment,
-    .other-user {
-        font-size: 0.85rem;
-    }
+  .user-ui p,
+  .comment,
+  .other-user {
+    font-size: 0.85rem;
+  }
 
-    .header {
-        font-size: 1.3rem;
-    }
+  .header {
+    font-size: 1.3rem;
+  }
 }
+/* Styla detta!!!!.......... */
+.todos-item {
+  display: flex;
+  align-items: center;
+  height: auto;
+  margin: 10px 0px;
+}
+/* storlek på checkmark */
+.todos-item i {
+  font-size: 24px;
+}
+.todos-title {
+  margin: 0;
+}
+/* .................... */

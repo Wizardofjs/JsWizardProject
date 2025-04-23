@@ -1,0 +1,24 @@
+body {
+  cursor: url('../img/wand.png') 32 0, auto;
+}
+
+.star {
+  position: absolute;
+  font-size: 20px;
+  pointer-events: none;
+  animation: confettiFall 1s ease-out forwards;
+  z-index: 9999;
+  user-select: none;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y)))
+      rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
