@@ -5,6 +5,8 @@ export async function renderTodos(userId) {
     const todosDiv = document.querySelector('.todos-div');
     console.log('Todos for user:', userId);
 
+    todosDiv.innerHTML = '';
+
     data.forEach((item) => {
       const todosItem = document.createElement('div');
       todosItem.classList.add('todos-item');
