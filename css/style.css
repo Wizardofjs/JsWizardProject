@@ -54,7 +54,7 @@ body {
 }
 
 #headline:hover {
-  transform: scale(1.01) rotate(-1deg);
+  transform: scale(1.2) rotate(2deg);
   animation: wiggle 1s ease-in-out infinite;
 }
 
@@ -98,15 +98,7 @@ body {
   }
 }
 
-@keyframes wiggle {
-  0%,
-  100% {
-    transform: scale(1.01) rotate(-5deg);
-  }
-  50% {
-    transform: scale(1.01) rotate(5deg);
-  }
-}
+
 
 .header i {
   font-size: 1.4rem;
