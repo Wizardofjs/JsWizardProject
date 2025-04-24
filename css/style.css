@@ -106,6 +106,18 @@ body {
   transform: scale(1.2);
 }
 
+.welcome-div {
+    height: 600px;
+    grid-column: 1;
+    padding: 15px;
+    background-image: url(../img/welcomeimage.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
+    overflow: hidden; 
+  }
+
 /* User-div */
 .user-div {
   grid-column: 1;
