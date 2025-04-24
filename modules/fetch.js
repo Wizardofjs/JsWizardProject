@@ -17,6 +17,10 @@ export async function fetchAndStoreData() {
     'https://jsonplaceholder.typicode.com/users'
   );
 
+  const imgData = await fetchData(
+    'https://hp-api.onrender.com/api/characters'
+  );
+
   if (postsData) {
     sessionStorage.setItem('posts', JSON.stringify(postsData));
   }
@@ -31,6 +35,10 @@ export async function fetchAndStoreData() {
 
   if (usersData) {
     sessionStorage.setItem('users', JSON.stringify(usersData));
+  }
+
+  if(imgData) {
+    sessionStorage.setItem('img', JSON.stringify(imgData));
   }
 
   console.log('Data fetched and stored in sessionStorage');
