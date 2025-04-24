@@ -320,6 +320,7 @@ body {
   100% {
     background-position: 0 0;
   }
+
 }
 
 .other-user.green::before {
@@ -396,12 +397,25 @@ body {
 }
 
 .todos-container {
+  position: relative;
   margin-top: 20px;
   padding: 10px;
   border-radius: 8px;
   background: #3a4a8a;
   height: auto;
   width: auto;
+}
+
+#sort-todos-button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 24px;
+  transition: 0.2s ease-in;
+}
+
+#sort-todos-button:hover {
+  color: yellow;
 }
 
 .todos-div {
@@ -418,7 +432,7 @@ body {
   border-top: 1px solid rgba(128, 128, 128, 0.444);
   line-height: 20px;
 }
-/* storlek på checkmark */
+
 .todos-item i {
   font-size: 24px;
   margin-right: 10px;
@@ -426,4 +440,3 @@ body {
 .todos-title {
   margin: 0;
 }
-/* .................... */
