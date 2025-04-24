@@ -82,19 +82,32 @@ export function loadMusic() {
   const pauseBtn = document.getElementById('hat');
 
   let isPlaying = false;
+  let isFadingIn = false;
+
+  // Preload the audio
+  audio.preload = 'auto'; // Ensures the audio file is preloaded
+
+  // Wait for the audio to be ready to play
+  audio.addEventListener('canplaythrough', () => {
+    playBtn.disabled = false; // Enable play button once audio is ready
+  });
 
   playBtn.addEventListener('click', () => {
-    if (!isPlaying) {
-      audio.play();
+    if (!isPlaying && !isFadingIn) {
+      audio.play().catch((err) => console.error('Audio play error:', err)); // Handle potential error
+
       let vol = 0;
+      isFadingIn = true;
       const fadeIn = setInterval(() => {
         if (vol < 0.02) {
           vol += 0.0003;
           audio.volume = Math.min(vol, 0.02);
         } else {
           clearInterval(fadeIn);
+          isFadingIn = false;
         }
       }, 200);
+
       isPlaying = true;
     }
   });
