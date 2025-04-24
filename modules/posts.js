@@ -1,11 +1,34 @@
 import { getDataFromSessionStorage } from './fetch.js';
+import { showComments } from './comments.js';
 
-//Funktion för att visa första användare och dess inlägg
+const posts = getDataFromSessionStorage('posts');
+const users = getDataFromSessionStorage('users');
+
+// Funktion för att skapa och returnera post-element
+function createPostElement(post, user) {
+  const article = document.createElement('article');
+  article.classList.add('post');
+  article.setAttribute('post-id', post.id);
+  article.setAttribute('user-id', post.userId);
+
+  const header = document.createElement('header');
+  const h2 = document.createElement('h2');
+  const username = user ? user.name : 'Okänd användare';
+
+  h2.textContent = username;
+  header.appendChild(h2);
+  article.appendChild(header);
+
+  const pContent = document.createElement('p');
+  pContent.innerHTML = post.body.replace(/\n/g, '<br>');
+  article.appendChild(pContent);
+
+  return article;
+}
+
+// Funktion för att visa första användare och dess inlägg
 export function showPosts() {
-  const posts = getDataFromSessionStorage('posts');
-  const users = getDataFromSessionStorage('users');
-
-  if (posts.length > 0) {
+  if (Array.isArray(posts) && posts.length > 0) {
     const postsContainer = document.querySelector('.feed-div');
     postsContainer.innerHTML = '';
 
@@ -21,42 +44,29 @@ export function showPosts() {
       return false;
     });
 
-    // Visa varje användare och dess post.
-    // Här ska ett id skapas för kommentarer alt. i HTML sidan.
     uniquePosts.forEach((post) => {
-      const article = document.createElement('article');
-      article.classList.add('post');
-
-      // Varje artikel får ett user och post ID
-      article.setAttribute('post-id', post.id);
-      article.setAttribute('user-id', post.userId);
-
-      const header = document.createElement('header');
-      const h2 = document.createElement('h2');
-
-      // Hitta användarnamn baserat på userId
       const user = users.find((user) => user.id === post.userId);
-      const username = user ? user.name : 'Okänd användare';
-
-      h2.textContent = `${username}`;
-      header.appendChild(h2);
-      article.appendChild(header);
-
-      const pContent = document.createElement('p');
-      pContent.innerHTML = post.body.replace(/\n/g, '<br>');
-      article.appendChild(pContent);
-
-      postsContainer.appendChild(article);
-
-      const commentsContainer = document.createElement('div');
-      commentsContainer.classList.add('post-comments');
-      commentsContainer.setAttribute('data-post-id', post.id);
-      commentsContainer.innerHTML = `
-      <div class='comment'>exempel</div>
-      <div class='comment'>exempel</div>
-    `;
-      article.appendChild(commentsContainer);
+      postsContainer.appendChild(createPostElement(post, user));
     });
+  } else {
+    console.log('No posts data available in sessionStorage.');
+  }
+}
+
+// Funktion för att visa alla inlägg från en användare
+export function showAllPostUser(userId) {
+  if (Array.isArray(posts) && posts.length > 0) {
+    const postsContainer = document.querySelector('.feed-div');
+    postsContainer.innerHTML = '';
+
+    posts
+      .filter((post) => post.userId === userId)
+      .forEach((post) => {
+        const user = users.find((u) => u.id === post.userId);
+        postsContainer.appendChild(createPostElement(post, user));
+      });
+
+    showComments();
   } else {
     console.log('No posts data available in sessionStorage.');
   }
