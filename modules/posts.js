@@ -1,10 +1,11 @@
 import { getDataFromSessionStorage } from './fetch.js';
+import { showComments } from './comments.js';
+
+const posts = getDataFromSessionStorage('posts');
+const users = getDataFromSessionStorage('users');
 
 //Funktion för att visa första användare och dess inlägg
 export function showPosts() {
-  const posts = getDataFromSessionStorage('posts');
-  const users = getDataFromSessionStorage('users');
-
   if (posts.length > 0) {
     const postsContainer = document.querySelector('.feed-div');
     postsContainer.innerHTML = '';
@@ -47,16 +48,41 @@ export function showPosts() {
       article.appendChild(pContent);
 
       postsContainer.appendChild(article);
-
-      const commentsContainer = document.createElement('div');
-      commentsContainer.classList.add('post-comments');
-      commentsContainer.setAttribute('data-post-id', post.id);
-      commentsContainer.innerHTML = `
-      <div class='comment'>exempel</div>
-      <div class='comment'>exempel</div>
-    `;
-      article.appendChild(commentsContainer);
     });
+  } else {
+    console.log('No posts data available in sessionStorage.');
+  }
+}
+
+export function showAllPostUser() {
+  if (posts.length > 0) {
+    const postsContainer = document.querySelector('.feed-div');
+    postsContainer.innerHTML = '';
+
+    posts.forEach((post) => {
+      const article = document.createElement('article');
+      article.classList.add('post');
+
+      article.setAttribute('post-id', post.id);
+      article.setAttribute('user-id', post.userId);
+
+      const header = document.createElement('header');
+      const h2 = document.createElement('h2');
+
+      const user = users.find((user) => user.id === post.userId);
+      const username = user ? user.name : 'Okänd användare';
+
+      h2.textContent = `${username}`;
+      header.appendChild(h2);
+      article.appendChild(header);
+
+      const pContent = document.createElement('p');
+      pContent.innerHTML = post.body.replace(/\n/g, '<br>');
+      article.appendChild(pContent);
+
+      postsContainer.appendChild(article);
+    });
+    showComments();
   } else {
     console.log('No posts data available in sessionStorage.');
   }
