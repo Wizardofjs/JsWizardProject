@@ -1,6 +1,7 @@
 //Importerar fetchUsers från fetch modulen
 import { getDataFromSessionStorage } from './fetch.js';
 import { renderTodos } from './todos.js';
+import { showUserDiv } from './ui.js';
 
 //Skapar en async funktion loadUsers()
 export function loadUsers(){
@@ -36,4 +37,5 @@ function showUserDetails(user){
     const userDiv = document.querySelector('.user-ui');
     userDiv.innerHTML = `<i class="fa-solid fa-user"></i><br> <h2>${user.name}</h2><br> <p>Username: ${user.username}<br>Email: ${user.email}</p>`
 
+    showUserDiv();
 }
