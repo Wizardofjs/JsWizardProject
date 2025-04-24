@@ -1,9 +1,6 @@
 import { getDataFromSessionStorage } from './fetch.js';
 import { showComments } from './comments.js';
 
-const posts = getDataFromSessionStorage('posts');
-const users = getDataFromSessionStorage('users');
-
 // Funktion för att skapa och returnera post-element
 function createPostElement(post, user) {
   const article = document.createElement('article');
@@ -28,6 +25,8 @@ function createPostElement(post, user) {
 
 // Funktion för att visa första användare och dess inlägg
 export function showPosts() {
+  const posts = getDataFromSessionStorage('posts');
+  const users = getDataFromSessionStorage('users');
   if (Array.isArray(posts) && posts.length > 0) {
     const postsContainer = document.querySelector('.feed-div');
     postsContainer.innerHTML = '';
@@ -55,6 +54,8 @@ export function showPosts() {
 
 // Funktion för att visa alla inlägg från en användare
 export function showAllPostUser(userId) {
+  const posts = getDataFromSessionStorage('posts');
+  const users = getDataFromSessionStorage('users');
   if (Array.isArray(posts) && posts.length > 0) {
     const postsContainer = document.querySelector('.feed-div');
     postsContainer.innerHTML = '';
