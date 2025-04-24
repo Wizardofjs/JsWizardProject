@@ -51,7 +51,7 @@ export function loadWand() {
 
 //Funktion för att visa startsidan när header klickas
 export function startPage() {
-  document.getElementById("header").addEventListener('click', () => {
+  document.getElementById("headline").addEventListener('click', () => {
     showPosts();
     showComments();
     showWelcomeInfo();
