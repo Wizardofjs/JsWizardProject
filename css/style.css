@@ -114,6 +114,7 @@ body {
   background-size: cover;
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
   overflow-y: auto;
+  display: none;
 }
 
 .user-ui {
@@ -307,7 +308,13 @@ body {
     color: rgb(61, 61, 61);
   }
 
+.profile-pic{
+  width: 100%;
+  border-radius: 10px;
+  filter:opacity(85%);
 
+}
+/* Responsive design */
 @media (max-width: 900px) {
   .container {
     grid-template-columns: 1fr;

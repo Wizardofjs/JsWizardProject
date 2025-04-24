@@ -3,6 +3,7 @@ import { getDataFromSessionStorage } from './fetch.js';
 import { renderTodos } from './todos.js';
 import { showAllPostUser } from './posts.js';
 
+import { showUserDiv } from './ui.js';
 
 //Skapar en async funktion loadUsers()
 export function loadUsers(){
@@ -46,4 +47,5 @@ function showUserDetails(user, img){
     <img src="${img || 'default.jpg'}" alt="Profilbild" class="profile-pic"><br>
     <p>Username: ${user.username}<br>
     Email: ${user.email}</p>`;
+    showUserDiv();
 }
