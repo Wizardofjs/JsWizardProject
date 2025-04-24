@@ -13,6 +13,8 @@
     }, 600);
   });
 } */
+import { showPosts } from './posts.js';
+import { showComments } from './comments.js';
 
 export function loadWand() {
   document.addEventListener('click', function (e) {
@@ -45,4 +47,37 @@ export function loadWand() {
       setTimeout(() => star.remove(), 1000);
     }
   });
+}
+
+//Funktion för att visa startsidan när header klickas
+export function startPage() {
+  document.getElementById("headline").addEventListener('click', () => {
+    showPosts();
+    showComments();
+    showWelcomeInfo();
+  })
+}
+
+//Visa välkomstinfon i vänsterkolumnen
+function showWelcomeInfo() {
+  const userInfo = document.getElementsByClassName('user-div')[0];
+  const welcomeDiv = document.querySelector('.welcome-div');
+if (userInfo) {
+  userInfo.style.display = 'none';
+  welcomeDiv.style.display = 'block';
+}
+  //const welcomeInfo = document.getElementById('welcome-div');
+  //welcomeInfo.style.display = 'block';
+}
+
+//Visa user-div infon i vänsterkolumnen
+export function showUserDiv() {
+  const userInfo = document.getElementsByClassName('user-div')[0];
+  const welcomeDiv = document.querySelector('.welcome-div');
+  if (userInfo) {
+    userInfo.style.display = 'block';
+    welcomeDiv.style.display = 'none';
+  }
+  //const welcomeInfo = document.getElementById('welcome-div');
+  //welcomeInfo.style.display = 'none';
 }

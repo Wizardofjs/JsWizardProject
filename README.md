@@ -8,15 +8,19 @@
 
 ---
 
-## 👥 Gruppmedlemmar
+## 🌐 Live Demo
 
-| Namn               | Ansvarsområde | GitHub                                               |
-| ------------------ | ------------- | ---------------------------------------------------- |
-| Thelma Mattsson    | Comments.JS   | [@ThelmaMattsson](https://github.com/ThelmaMattsson) |
-| Kevin Lundgren     | Todo.JS       | [@toobi-jpg](https://github.com/toobi-jpg)           |
-| Hanna Sahlberg     | User.JS       | [@hannasahlberg](https://github.com/hannasahlberg)   |
-| Alexander Simonsen | HTML & CSS    | [@Tomshi-123](https://github.com/Tomshi-123)         |
-| Tom Larsson        | Post.JS       | [@tombenrex](https://github.com/tombenrex)           |
+🔗 [Besök webbplatsen här](https://wizardofjs.github.io/JsWizardProject/)
+
+## 👥 Gruppmedlemmar 🧙‍♂️
+
+| Namn               | Ansvarsområde                       | GitHub                                               |
+| ------------------ | ----------------------------------- | ---------------------------------------------------- |
+| Thelma Mattsson    | Hantering av comments (comments.js) | [@ThelmaMattsson](https://github.com/ThelmaMattsson) |
+| Kevin Lundgren     | TODO-listan (todo.js)               | [@toobi-jpg](https://github.com/toobi-jpg)           |
+| Hanna Sahlberg     | Hantering av user (user.js)         | [@hannasahlberg](https://github.com/hannasahlberg)   |
+| Alexander Simonsen | Design & CSS-effekter               | [@Tomshi-123](https://github.com/Tomshi-123)         |
+| Tom Larsson        | Hantering av posts (post.js)        | [@tombenrex](https://github.com/tombenrex)           |
 
 ---
 
@@ -24,19 +28,60 @@
 
 Att tillsammans skapa en modern, användarvänlig och responsiv webbplats med fokus på:
 
-- Någonting
-- Någonting
-- Någonting
+- Hämta flera API och visa upp inlägg och kommentarer för samma user
 - Versionshantering i grupp med Git och GitHub
 
 ---
 
+## 🔗 Använda API:er
+
+- [Post API](https://jsonplaceholder.typicode.com/posts/)
+
+  - Användardata
+  - Inlägg (10 st per användare)
+
+- [Comments API](https://jsonplaceholder.typicode.com/comments/)
+
+  - Användardata
+  - Kommentarer (5st per användare)
+
+- [Todos API](https://jsonplaceholder.typicode.com/todos/)
+
+  - Användardata
+  - Uppgift
+  - True or False
+
+- [User API](https://jsonplaceholder.typicode.com/users/)
+
+  - Användardata
+  - Namn
+  - Email
+  - Användarnamn
+  - Adress
+
+- [Harry Potter API](https://hp-api.onrender.com/api/characters)
+  - hämtar bild från 10 första.
+
 ## 🧱 Teknisk översikt
 
 ```bash
-projektmapp/
+JSWizardProject/
+├── img/
+│   ├── favicon.ico
+│   ├── wand.png
+│   └── wand2.png
+├── css/
+│   ├── effect.css
+│   └── style.css
+├── modules/
+│   ├── comments.js
+│   ├── fetch.js
+│   ├── main.js
+│   ├── posts.js
+│   ├── todos.js
+│   ├── ui.js
+│   └── user.js
+├── .prettierrc
 ├── index.html
-├── style.css
-├── script.js
 └── README.md
 ```
