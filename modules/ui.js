@@ -70,46 +70,39 @@ export function showUserDiv() {
 // Testar lite spännande musik (:
 
 export function loadMusic() {
+  // Create audio element
   const audio = document.createElement('audio');
   audio.src = './audio/Our-Mountain.mp3';
   audio.type = 'audio/mpeg';
-  audio.autoplay = true;
   audio.loop = true;
-
   audio.volume = 0;
   document.body.appendChild(audio);
 
-  const stopBtn = document.createElement('button');
-  stopBtn.innerHTML = '<i class="fas fa-pause"></i>'; // Initially set to "Pause"
-  const header = document.querySelector('.header'); // Select the header element
+  const playBtn = document.getElementById('wand');
+  const pauseBtn = document.getElementById('hat');
 
-  if (header) {
-    header.appendChild(stopBtn); // Append the button to the header
-  }
+  let isPlaying = false;
 
-  document.body.addEventListener(
-    'click',
-    () => {
+  playBtn.addEventListener('click', () => {
+    if (!isPlaying) {
+      audio.play();
       let vol = 0;
       const fadeIn = setInterval(() => {
         if (vol < 0.02) {
-          vol += 0.0003; // Softer fade effect
+          vol += 0.0003;
           audio.volume = Math.min(vol, 0.02);
         } else {
           clearInterval(fadeIn);
         }
-      }, 200); // 200ms interval = about 4 seconds for the fade-in
-    },
-    { once: true }
-  );
+      }, 200);
+      isPlaying = true;
+    }
+  });
 
-  stopBtn.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-      stopBtn.innerHTML = '<i class="fas fa-pause"></i>'; // Change button text to "Pause" when playing
-    } else {
+  pauseBtn.addEventListener('click', () => {
+    if (isPlaying) {
       audio.pause();
-      stopBtn.innerHTML = '<i class="fas fa-play"></i>'; // Change button text to "Play" when paused
+      isPlaying = false;
     }
   });
 }
