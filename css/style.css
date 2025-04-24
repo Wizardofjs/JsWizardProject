@@ -196,6 +196,12 @@ body {
     color: rgb(61, 61, 61);
 }
 
+.profile-pic{
+  width: 100%;
+  border-radius: 10px;
+  filter:opacity(85%);
+
+}
 /* Responsive design */
 @media (max-width: 900px) {
   .container {
