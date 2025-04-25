@@ -1,5 +1,6 @@
 body {
-  cursor: url('../img/wand.png') 0 0, auto;
+  cursor: url('../img/wand.png') 1 1, pointer; /* Adjust hotspot to wand tip */
+  position: relative; /* Ensure absolute children are positioned correctly */
 }
 
 .star {
@@ -11,18 +12,18 @@ body {
   animation: confettiFall 1s ease-out forwards;
   z-index: 9999;
   user-select: none;
-  left: 50%;
-  top: 50%;
+  text-align: center;
+  line-height: 20px;
+  transform: translateZ(0); /* Force GPU for Safari */
 }
 
 @keyframes confettiFall {
   0% {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(0, 0) scale(1);
     opacity: 1;
   }
   100% {
-    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y)))
-      rotate(360deg) scale(0.5);
+    transform: translate(var(--x), var(--y)) rotate(360deg) scale(0.5);
     opacity: 0;
   }
 }

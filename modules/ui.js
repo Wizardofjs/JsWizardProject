@@ -11,24 +11,23 @@ export function loadWand() {
       '#bf80ff',
       '#ff66cc',
     ];
-    const emojis = ['✨', '★', '✦', '✧', '✪', '✩']; // fun mix, or just stick to ✨
+    const emojis = ['✨', '★', '✦', '✧', '✪', '✩'];
 
     for (let i = 0; i < 8; i++) {
       const star = document.createElement('div');
       star.className = 'star';
       star.textContent = emojis[Math.floor(Math.random() * emojis.length)];
       star.style.color = colors[Math.floor(Math.random() * colors.length)];
-      star.style.left = `${e.clientX}px`;
-      star.style.top = `${e.clientY}px`;
+      star.style.left = `${e.clientX + window.scrollX - 1}px`; // Adjust for scroll and hotspot
+      star.style.top = `${e.clientY + window.scrollY - 1}px`; // Adjust for scroll and hotspot
 
-      // Random offset to make it feel more "confetti-like"
+      // Random offset for confetti effect
       const xOffset = (Math.random() - 0.5) * 200 + 'px';
       const yOffset = (Math.random() - 0.5) * 300 + 'px';
       star.style.setProperty('--x', xOffset);
       star.style.setProperty('--y', yOffset);
 
       document.body.appendChild(star);
-
       setTimeout(() => star.remove(), 1000);
     }
   });
