@@ -507,9 +507,9 @@ body {
   position: relative;
   background: none;
   border: none;
-  color: var(--color-color);
+  color: var(--color-light);
   font-size: 14px;
-  cursor: pointer;
+  cursor: url(../img/wand2.png) 0 0, auto;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -518,7 +518,7 @@ body {
 }
 
 .like-button.liked {
-  color: var(--color-drop);
+  color: var(--color-light-v2);
   animation: simpleGlow 1.5s ease-in-out forwards;
 }
 
