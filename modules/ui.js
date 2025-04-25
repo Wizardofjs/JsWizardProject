@@ -51,8 +51,6 @@ function showWelcomeInfo() {
     userInfo.style.display = 'none';
     welcomeDiv.style.display = 'block';
   }
-  //const welcomeInfo = document.getElementById('welcome-div');
-  //welcomeInfo.style.display = 'block';
 }
 
 //Visa user-div infon i vänsterkolumnen
@@ -63,8 +61,6 @@ export function showUserDiv() {
     userInfo.style.display = 'block';
     welcomeDiv.style.display = 'none';
   }
-  //const welcomeInfo = document.getElementById('welcome-div');
-  //welcomeInfo.style.display = 'none';
 }
 
 // Testar lite spännande musik (:
