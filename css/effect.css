@@ -4,11 +4,15 @@ body {
 
 .star {
   position: absolute;
+  width: 20px;
+  height: 20px;
   font-size: 20px;
   pointer-events: none;
   animation: confettiFall 1s ease-out forwards;
   z-index: 9999;
   user-select: none;
+  left: 50%;
+  top: 50%;
 }
 
 @keyframes confettiFall {
