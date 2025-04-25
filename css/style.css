@@ -494,3 +494,42 @@ body {
 .todos-title {
   margin: 0;
 }
+
+.like-container {
+  margin-top: 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.like-button {
+  position: relative;
+  background: none;
+  border: none;
+  color: var(--color-color);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.like-button.liked {
+  color: var(--color-drop);
+  animation: simpleGlow 1.5s ease-in-out forwards;
+}
+
+@keyframes simpleGlow {
+  0% {
+    text-shadow: 0 0 0 transparent;
+  }
+  50% {
+    text-shadow: 0 0 15px #ff7300, 0 0 30px #ff7300;
+  }
+  100% {
+    text-shadow: 0 0 0 transparent;
+  }
+}
