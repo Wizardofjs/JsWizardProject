@@ -27,28 +27,31 @@
     />
   </head>
   <body>
-    <div class="container">
-      <div class="header">
+    <main class="container">
+      <header class="header">
         <i id="hat" class="fa-solid fa-hat-wizard"></i>
         <h1 id="headline">Wizards</h1>
         <i id="wand" class="fa-solid fa-wand-sparkles"></i>
-      </div>
+      </header>
       <div class="welcome-div"></div>
-      <div class="user-div">
+      <aside class="left-container">
         <div class="user-ui"></div>
         <div class="todos-container">
           <h3>Todos</h3>
           <i id="sort-todos-button" class="bx bx-sort-alt-2"></i>
           <div class="todos-div"></div>
         </div>
-      </div>
-      <div class="feed-div"></div>
-      <div class="other-users">
-      <div class="others-div">
-       </div>
-      <img id="wizardAnimated" src="./img/angrywizard.gif">
-    </div> 
-    </div>
+      </aside>
+      <section class="feed-div"></section>
+      <aside class="right-container">
+        <div class="others-div"></div>
+        <img
+          id="wizardAnimated"
+          src="./img/angrywizard.gif"
+          alt="animated spinning wizard"
+        />
+      </aside>
+    </main>
 
     <script src="./modules/main.js" type="module"></script>
   </body>
