@@ -1,12 +1,10 @@
 import { getDataFromSessionStorage } from './fetch.js';
-import { renderTodos } from './todos.js';
 import { showAllPostUser } from './posts.js';
-import { scrollAllToTop, showUserDiv } from './ui.js';
+import { renderTodos } from './todos.js';
+import { showUserDiv } from './ui.js';
 
-// Skapar en async funktion loadUsers()
 export function loadUsers() {
   try {
-    // Tilldelar variabler
     const images = getDataFromSessionStorage('img');
     const users = getDataFromSessionStorage('users');
     const userDiv = document.querySelector('.others-div');
@@ -19,16 +17,16 @@ export function loadUsers() {
     users.forEach((user, index) => {
       const userElement = document.createElement('button');
       const colors = ['#65ff90', 'gray'];
+      const colors = ['#65ff90', 'gray'];
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
       userElement.classList.add(randomColor === '#65ff90' ? 'green' : 'gray');
-
       userElement.classList.add('other-user');
       userElement.textContent = `${user.name}`;
       fragment.appendChild(userElement);
 
       const userImage = images[index];
 
-      // Skapar en eventlyssnare som anropar en funktion
+      // Event listener for user button clicks
       userElement.addEventListener('click', () => {
         const userColor = randomColor;
         showUserDetails(user, userImage?.image, userColor);
@@ -45,7 +43,7 @@ export function loadUsers() {
   }
 }
 
-// Funktion som anropas från eventlyssnaren och öppnar mer information om den klickade användaren
+// Function to show user details
 export function showUserDetails(user, img, color) {
   const userDiv = document.querySelector('.user-ui');
   userDiv.innerHTML = `<i class="fa-solid fa-circle" style="color: ${color};"></i>
