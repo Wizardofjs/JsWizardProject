@@ -1,7 +1,4 @@
-// post.js
-
 import { getDataFromSessionStorage } from './fetch.js';
-import { createPostElement } from './user.js'; // Import createPostElement from user.js
 import { showComments } from './comments.js';
 import { showUserDetails } from './user.js';
 import { renderTodos } from './todos.js';
@@ -111,36 +108,4 @@ export function showAllPostUser(userId) {
     console.log('No posts data available in sessionStorage.');
   }
   scrollAllToTop();
-}
-
-// Funktion för att visa första användare och dess inlägg
-export function showPosts() {
-  const posts = getDataFromSessionStorage('posts');
-  const users = getDataFromSessionStorage('users');
-
-  if (Array.isArray(posts) && posts.length > 0) {
-    const postsContainer = document.querySelector('.feed-div');
-    postsContainer.innerHTML = '';
-
-    // Object för att hålla koll på vilken användare
-    const seenUsers = new Set();
-
-    // Filtrera 1 post per användare
-    const uniquePosts = posts.filter((post) => {
-      if (!seenUsers.has(post.userId)) {
-        seenUsers.add(post.userId);
-        return true;
-      }
-      return false;
-    });
-
-    uniquePosts.forEach((post) => {
-      const user = users.find((user) => user.id === post.userId);
-      const postElement = createPostElement(post, user);
-
-      postsContainer.appendChild(postElement);
-    });
-  } else {
-    console.log('No posts data available in sessionStorage.');
-  }
 }
