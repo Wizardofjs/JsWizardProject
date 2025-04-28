@@ -205,19 +205,12 @@ body {
 
 .user-ui {
   padding: var(--size-m);
-  background: #3a4a8a;
   border-radius: 8px;
   text-align: left;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.user-ui i.fa-user {
-  font-size: 2.5rem;
-  color: #ffd700;
-  margin-right: 10px;
-  vertical-align: middle;
-  filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
-}
+
 
 .user-ui h2 {
   font-size: 1.5rem;
@@ -227,21 +220,9 @@ body {
   font-weight: 700;
 }
 
-.user-ui p {
-  font-size: 0.95rem;
-  color: #d0d0d0;
-  margin: 6px 0;
-  line-height: 1.4;
-}
 
-.user-ui p a {
-  color: #ffd700;
-  text-decoration: none;
-}
 
-.user-ui p a:hover {
-  text-decoration: underline;
-}
+
 
 /*-------------------------------- Feed-div ------------------------------*/
 
