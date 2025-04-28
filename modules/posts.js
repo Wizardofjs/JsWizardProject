@@ -63,12 +63,12 @@ export function showPosts() {
       if (usernameElement) {
         usernameElement.addEventListener('click', () => {
           const userImage = images.find(
-            (img, index) => users[index]?.id === user.id
-          ); // Match image to user
-          const colors = ['#65ff90', 'gray']; // Same colors as in user.js
-          const randomColor = colors[Math.floor(Math.random() * colors.length)]; // Random color
-          showAllPostUser(user.id); // Show all posts for the user
-          showUserDetails(user, userImage?.image, randomColor); // Pass user, image, and color
+            (index) => users[index]?.id === user.id
+          );
+          const colors = ['#65ff90', 'gray'];
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
+          showAllPostUser(user.id);
+          showUserDetails(user, userImage?.image, randomColor);
           renderTodos(user.id);
           scrollAllToTop();
         });
@@ -90,7 +90,6 @@ export function showAllPostUser(userId) {
   const postsContainer = document.querySelector('.feed-div');
   const fragment = document.createDocumentFragment();
 
-  // Rensa skeleton screens
   postsContainer.innerHTML = '';
 
   if (Array.isArray(posts) && posts.length > 0) {
