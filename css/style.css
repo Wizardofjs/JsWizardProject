@@ -266,9 +266,9 @@ body {
   flex-direction: column;
   padding: var(--size-m);
   background: rgb(177, 203, 235);
-  margin: 25px 0;
-  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  margin: 0;
+  border-bottom: 2px solid black;
+  
 }
 
 .post:hover {
