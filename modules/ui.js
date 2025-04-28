@@ -44,20 +44,20 @@ export function startPage() {
 
 //Visa välkomstinfon i vänsterkolumnen
 function showWelcomeInfo() {
-  const userInfo = document.getElementsByClassName('user-div')[0];
+  const leftContainer = document.getElementsByClassName('left-container')[0];
   const welcomeDiv = document.querySelector('.welcome-div');
-  if (userInfo) {
-    userInfo.style.display = 'none';
+  if (leftContainer) {
+    leftContainer.style.display = 'none';
     welcomeDiv.style.display = 'block';
   }
 }
 
 //Visa user-div infon i vänsterkolumnen
 export function showUserDiv() {
-  const userInfo = document.getElementsByClassName('user-div')[0];
+  const leftContainer = document.getElementsByClassName('left-container')[0];
   const welcomeDiv = document.querySelector('.welcome-div');
-  if (userInfo) {
-    userInfo.style.display = 'block';
+  if (leftContainer) {
+    leftContainer.style.display = 'block';
     welcomeDiv.style.display = 'none';
   }
 }

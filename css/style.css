@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
+:root {
+  /* Colors */
+  --color-light: #e0e0e0;
+  --color-light-v2: #f0f0f0;
+  --color-color: #ffd700;
+  --color-drop: #ffd70080;
+  --color-dark: #050a16;
+  --color-blue: #2e3f7a;
+  --color-dark-v2: #0a1a3d;
+  --color-dark-v3: #021a3f;
+  --color-text-shadow: #ffffff4d;
+  /* Heights */
+  --size-0: 0px;
+  --size-1: 3px;
+  --size-xs: 8px;
+  --size-s: 10px;
+  --size-m: 15px;
+  --size-l: 20px;
+  /* Font Sizes */
+  --font-size: clamp(1rem, 2vw, 1.8rem);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,9 +29,9 @@
 }
 
 body {
-  background: linear-gradient(135deg, #0a1a3d, #1b2e5c);
+  background: linear-gradient(135deg, var(--color-dark-v2), var(--color-blue));
   font-family: 'Poppins', sans-serif;
-  color: #e0e0e0;
+  color: var(--color-light);
   min-height: 100vh;
   padding: 0;
 }
@@ -18,39 +40,42 @@ body {
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr 3fr 1fr;
-  /* Blir strul med konfettit ? / Tom */
-  /*   width: 100vw;
-  height: 100vh; */
-  gap: 10px;
-  background: #021a3f;
+  gap: var(--size-s);
+  background: var(--color-dark-v3);
   border-radius: 0;
+  /*    Blir strul med konfettit         */
+  /*    kommenterade ut detta under    */
+  /*                                      */
+  /*      width: 100vw;                 */
+  /*      height: 100vh;               */
 }
 
 /* Header */
 .header {
-  font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   grid-column: 1 / -1;
-  padding: 15px;
-  background: linear-gradient(90deg, #050a16, #2e3f7a, #050a16);
-  font-size: 1.8rem;
-  color: #f0f0f0;
-  font-weight: 700;
-  gap: 8px;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 20px 20px #2e3f7a;
+  padding: var(--size-m);
+  background: linear-gradient(
+    90deg,
+    var(--color-dark),
+    var(--color-blue),
+    var(--color-dark)
+  );
+  color: var(--color-light-v2);
+  gap: var(--size-xs);
+  text-shadow: var(--size-0) var(--size-0) var(--size-xs)
+    var(--color-text-shadow);
+  box-shadow: var(--size-0) var(--size-l) var(--size-l) var(--color-blue);
 }
 
 #headline {
   position: relative;
   display: inline-block;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #f0f0f0;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-  z-index: 1;
+  font-size: var(--font-size);
+  color: var(--color-light-v2);
+  z-index: 1; /* Behövs denna?  / Tom */
   transition: transform 0.3s ease-in-out;
 }
 
@@ -101,8 +126,10 @@ body {
 
 .header i {
   font-size: 1.4rem;
-  color: #ffd700;
-  filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+  color: var(--color-color);
+  filter: drop-shadow(
+    var(--size-0) var(--size-0) var(size-1) var(--color-drop)
+  );
   transition: transform 0.2s ease;
 }
 
@@ -114,14 +141,14 @@ body {
   margin-top: 40px;
   height: 700px;
   grid-column: 1;
-  padding: 15px;
+  padding: var(--size-m);
   background-image: url(../img/welcomeimage.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   position: relative; /* Behövs för att positionera ::after */
   overflow: hidden;
-  box-shadow: 0px 0px 20px 5px rgba(60, 60, 145, 0.878);
+  box-shadow: 0px 0px 20px 5px var(--color-blue);
 }
 
 .welcome-div::after {
@@ -155,9 +182,9 @@ body {
 }
 
 /* User-div */
-.user-div {
+.left-container {
   grid-column: 1;
-  padding: 15px;
+  padding: var(--size-m);
   background: #2a3a6a;
   background-size: cover;
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
@@ -166,7 +193,7 @@ body {
 }
 
 .user-ui {
-  padding: 15px;
+  padding: var(--size-m);
   background: #3a4a8a;
   border-radius: 8px;
   text-align: left;
@@ -209,7 +236,7 @@ body {
 .feed-div {
   color: black;
   grid-column: 2;
-  padding: 15px;
+  padding: var(--size-m);
   background: transparent;
   overflow-y: auto;
 }
@@ -237,7 +264,7 @@ body {
 .post {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: var(--size-m);
   background: rgb(177, 203, 235);
   margin: 25px 0;
   box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.2);
@@ -270,7 +297,7 @@ body {
 /* Others-div */
 .others-div {
   grid-column: 3;
-  padding: 15px;
+  padding: var(--size-m);
   background: #2a3a6a;
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
   overflow-y: auto;
@@ -372,7 +399,7 @@ body {
     gap: 8px;
   }
 
-  .user-div,
+  .left-container,
   .feed-div,
   .others-div {
     grid-column: 1;
@@ -401,7 +428,7 @@ body {
     gap: 5px;
   }
 
-  .user-div,
+  .left-container,
   .feed-div,
   .others-div {
     padding: 10px;
@@ -425,7 +452,7 @@ body {
 
 .todos-container {
   position: relative;
-  margin-top: 20px;
+  margin-top: var(--size-l);
   padding: 10px;
   border-radius: 8px;
   background: #3a4a8a;
@@ -435,8 +462,8 @@ body {
 
 #sort-todos-button {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: var(--size-m);
+  top: var(--size-m);
   font-size: 24px;
   transition: 0.2s ease-in;
 }
@@ -466,4 +493,43 @@ body {
 }
 .todos-title {
   margin: 0;
+}
+
+.like-container {
+  margin-top: 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.like-button {
+  position: relative;
+  background: none;
+  border: none;
+  color: var(--color-light);
+  font-size: 14px;
+  cursor: url(../img/wand2.png) 0 0, auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.like-button.liked {
+  color: var(--color-light-v2);
+  animation: simpleGlow 1.5s ease-in-out forwards;
+}
+
+@keyframes simpleGlow {
+  0% {
+    text-shadow: 0 0 0 transparent;
+  }
+  50% {
+    text-shadow: 0 0 15px #ff7300, 0 0 30px #ff7300;
+  }
+  100% {
+    text-shadow: 0 0 0 transparent;
+  }
 }
