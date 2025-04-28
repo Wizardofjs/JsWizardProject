@@ -137,7 +137,6 @@ body {
 .header i:hover {
   transform: scale(1.2);
 }
-
 .user-header {
   display: flex;
   justify-content: center;
@@ -201,6 +200,7 @@ body {
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
   overflow-y: auto;
   display: none;
+  transition: 0.2s ease-in;
 }
 
 .user-ui {
