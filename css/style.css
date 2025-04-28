@@ -147,6 +147,7 @@ body {
 
 .welcome-div {
   margin-top: 40px;
+  margin-left:25px;
   height: 700px;
   grid-column: 1;
   padding: var(--size-m);
