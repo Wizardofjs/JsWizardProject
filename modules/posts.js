@@ -13,6 +13,7 @@ function createPostElement(post, user, showUsername = true) {
 
   const header = document.createElement('header');
   const h2 = document.createElement('h2');
+  h2.classList.add('username');
 
   // Only show username if showUsername is true
   if (showUsername) {
