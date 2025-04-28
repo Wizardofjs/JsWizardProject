@@ -65,6 +65,7 @@ export function showPosts() {
           showAllPostUser(user.id); // Show all posts for the user
           showUserDetails(user, userImage?.image, randomColor); // Pass user, image, and color
           renderTodos(user.id);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       }
 
