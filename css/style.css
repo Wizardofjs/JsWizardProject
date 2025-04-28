@@ -50,7 +50,10 @@ body {
   /*      height: 100vh;               */
 }
 
-/* Header */
+
+/*-------------------------------- Header ------------------------------*/
+
+
 .header {
   display: flex;
   justify-content: center;
@@ -137,6 +140,9 @@ body {
   transform: scale(1.2);
 }
 
+
+/*-------------------------------- Welcome div ------------------------------*/
+
 .welcome-div {
   margin-top: 40px;
   height: 700px;
@@ -181,8 +187,11 @@ body {
   }
 }
 
-/* User-div */
+
+/*-------------------------------- User Info  ------------------------------*/
+
 .left-container {
+  height: 100vh;
   grid-column: 1;
   padding: var(--size-m);
   background: #2a3a6a;
@@ -232,8 +241,12 @@ body {
   text-decoration: underline;
 }
 
-/* Feed-div */
+
+/*-------------------------------- Feed-div ------------------------------*/
+
+
 .feed-div {
+  height: 100vh;
   color: black;
   grid-column: 2;
   padding: var(--size-m);
@@ -261,14 +274,16 @@ body {
   background: #555;
 }
 
+/*-------------------------------- Posts and comments ------------------------------*/
+
 .post {
   display: flex;
   flex-direction: column;
   padding: var(--size-m);
   background: rgb(177, 203, 235);
-  margin: 25px 0;
-  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  margin: 0;
+  border-bottom: 2px solid black;
+  
 }
 
 .post:hover {
@@ -294,7 +309,9 @@ body {
   transition: background 0.2s ease;
 }
 
-/* Others-div */
+/*-------------------------------- other users ------------------------------*/
+
+
 .others-div {
   grid-column: 3;
   padding: var(--size-m);
@@ -390,65 +407,11 @@ body {
   border-radius: 10px;
   filter: opacity(85%);
 }
-/* Responsive design */
-@media (max-width: 900px) {
-  .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-    height: auto;
-    gap: 8px;
-  }
 
-  .left-container,
-  .feed-div,
-  .others-div {
-    grid-column: 1;
-  }
 
-  .header {
-    font-size: 1.5rem;
-    padding: 12px;
-  }
 
-  .user-ui h2 {
-    font-size: 1.3rem;
-  }
+/*-------------------------------- Todos ------------------------------*/
 
-  .post {
-    margin: 8px 0;
-  }
-}
-
-@media (max-width: 500px) {
-  body {
-    padding: 0;
-  }
-
-  .container {
-    gap: 5px;
-  }
-
-  .left-container,
-  .feed-div,
-  .others-div {
-    padding: 10px;
-  }
-
-  .user-ui,
-  .post {
-    padding: 10px;
-  }
-
-  .user-ui p,
-  .comment,
-  .other-user {
-    font-size: 0.85rem;
-  }
-
-  .header {
-    font-size: 1.3rem;
-  }
-}
 
 .todos-container {
   position: relative;
@@ -495,6 +458,10 @@ body {
   margin: 0;
 }
 
+
+/*-------------------------------- Likes-container ------------------------------*/
+
+
 .like-container {
   margin-top: 8px;
   display: flex;
@@ -533,3 +500,67 @@ body {
     text-shadow: 0 0 0 transparent;
   }
 }
+
+
+/*-------------------------------- Responsive design ------------------------------*/
+
+
+@media (max-width: 500px) {
+  body {
+    padding: 0;
+  }
+
+  .container {
+    gap: 5px;
+  }
+
+  .left-container,
+  .feed-div,
+  .others-div {
+    padding: 10px;
+  }
+
+  .user-ui,
+  .post {
+    padding: 10px;
+  }
+
+  .user-ui p,
+  .comment,
+  .other-user {
+    font-size: 0.85rem;
+  }
+
+  .header {
+    font-size: 1.3rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    height: auto;
+    gap: 8px;
+  }
+
+  .left-container,
+  .feed-div,
+  .others-div {
+    grid-column: 1;
+  }
+
+  .header {
+    font-size: 1.5rem;
+    padding: 12px;
+  }
+
+  .user-ui h2 {
+    font-size: 1.3rem;
+  }
+
+  .post {
+    margin: 8px 0;
+  }
+
+}
+
+
