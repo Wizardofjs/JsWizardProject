@@ -34,10 +34,13 @@ export function showPosts() {
   const posts = getDataFromSessionStorage('posts');
   const users = getDataFromSessionStorage('users');
   const images = getDataFromSessionStorage('img');
-  if (Array.isArray(posts) && posts.length > 0) {
-    const postsContainer = document.querySelector('.feed-div');
-    postsContainer.innerHTML = '';
+  const postsContainer = document.querySelector('.feed-div');
+  const fragment = document.createDocumentFragment();
 
+  // Rensa skeleton screens
+  postsContainer.innerHTML = '';
+
+  if (Array.isArray(posts) && posts.length > 0) {
     // Object för att hålla koll på vilken användare
     const seenUsers = new Set();
 
@@ -70,8 +73,10 @@ export function showPosts() {
         });
       }
 
-      postsContainer.appendChild(postElement);
+      fragment.appendChild(postElement);
     });
+
+    postsContainer.appendChild(fragment);
   } else {
     console.log('No posts data available in sessionStorage.');
   }
@@ -81,10 +86,13 @@ export function showPosts() {
 export function showAllPostUser(userId) {
   const posts = getDataFromSessionStorage('posts');
   const users = getDataFromSessionStorage('users');
-  if (Array.isArray(posts) && posts.length > 0) {
-    const postsContainer = document.querySelector('.feed-div');
-    postsContainer.innerHTML = '';
+  const postsContainer = document.querySelector('.feed-div');
+  const fragment = document.createDocumentFragment();
 
+  // Rensa skeleton screens
+  postsContainer.innerHTML = '';
+
+  if (Array.isArray(posts) && posts.length > 0) {
     const user = users.find((u) => u.id === userId);
     if (user) {
       const header = document.createElement('header');
@@ -93,16 +101,17 @@ export function showAllPostUser(userId) {
       userHeader.textContent = `${user.name}`;
 
       header.appendChild(userHeader);
-      postsContainer.appendChild(header);
+      fragment.appendChild(header);
     }
 
     posts
       .filter((post) => post.userId === userId)
       .forEach((post) => {
         const user = users.find((u) => u.id === post.userId);
-        postsContainer.appendChild(createPostElement(post, user, false));
+        fragment.appendChild(createPostElement(post, user, false));
       });
 
+    postsContainer.appendChild(fragment);
     showComments();
   } else {
     console.log('No posts data available in sessionStorage.');
