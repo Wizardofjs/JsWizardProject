@@ -254,6 +254,12 @@ body {
   overflow-y: auto;
 }
 
+.feed-div h2 {
+  font-size: 2rem;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 15px;
+}
+
 ::-webkit-scrollbar {
   width: 1rem;
   height: 10px;

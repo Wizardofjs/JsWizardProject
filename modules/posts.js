@@ -63,12 +63,10 @@ export function showPosts() {
       if (usernameElement) {
         usernameElement.addEventListener('click', () => {
           const userImage = images.find(
-            (index) => users[index]?.id === user.id
+            (_img, index) => users[index]?.id === user.id
           );
-          const colors = ['#65ff90', 'gray'];
-          const randomColor = colors[Math.floor(Math.random() * colors.length)];
           showAllPostUser(user.id);
-          showUserDetails(user, userImage?.image, randomColor);
+          showUserDetails(user, userImage?.image);
           renderTodos(user.id);
           scrollAllToTop();
         });
