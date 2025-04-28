@@ -30,28 +30,41 @@ body {
 
 .broom {
   position: absolute;
-  top: 50%;
-  left: -100px;
-  animation: flyInBroom 5s ease-out forwards; /* Once the broom flies in, it stops at the top and then flies away to the right */
+  bottom: -100px;
+  right: 0;
+  animation: flyInBroom 5s ease-out forwards;
 }
 
 .broom-image {
-  width: 100px; /* Adjust to fit your broom image */
-  animation: broomSparkle 1.5s infinite alternate; /* Sparkle effect */
+  width: 100px;
+  animation: broomSparkle 1.5s infinite alternate,
+    broomRotate 10s linear infinite;
 }
 
 @keyframes flyInBroom {
   0% {
-    left: -100px;
-    top: 50%;
+    bottom: -100px;
+    right: 0;
+    opacity: 1;
   }
   50% {
-    left: 50%;
-    top: 10%; /* Move to the top */
+    bottom: 50%;
+    right: 50%;
+    opacity: 1;
   }
   100% {
-    left: 100%; /* Move to the right */
-    top: 10%; /* Stay at the top */
+    bottom: 100%;
+    right: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes broomRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }
 
