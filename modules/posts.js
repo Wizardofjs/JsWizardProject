@@ -2,6 +2,7 @@ import { getDataFromSessionStorage } from './fetch.js';
 import { showComments } from './comments.js';
 import { showUserDetails } from './user.js';
 import { renderTodos } from './todos.js';
+import { scrollAllToTop } from './ui.js';
 
 // Funktion för att skapa och returnera post-element
 function createPostElement(post, user, showUsername = true) {
@@ -65,6 +66,7 @@ export function showPosts() {
           showAllPostUser(user.id); // Show all posts for the user
           showUserDetails(user, userImage?.image, randomColor); // Pass user, image, and color
           renderTodos(user.id);
+          scrollAllToTop();
         });
       }
 
@@ -105,4 +107,5 @@ export function showAllPostUser(userId) {
   } else {
     console.log('No posts data available in sessionStorage.');
   }
+  scrollAllToTop();
 }

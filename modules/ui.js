@@ -39,6 +39,7 @@ export function startPage() {
     showPosts();
     showComments();
     showWelcomeInfo();
+    scrollAllToTop();
   });
 }
 
@@ -113,4 +114,23 @@ export function loadMusic() {
       isPlaying = false;
     }
   });
+}
+
+export function scrollAllToTop() {
+  // Scrolla window direkt
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Vänta ett ögonblick så att DOM-hantering (t.ex. posts/todos) hinner uppdateras
+  setTimeout(() => {
+    const scrollTargets = [
+      document.querySelector('.feed-div'),
+      document.querySelector('.left-container')
+    ];
+
+    scrollTargets.forEach(el => {
+      if (el) {
+        el.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }, 50); // Justera till 100ms vid behov
 }
