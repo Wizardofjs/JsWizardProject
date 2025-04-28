@@ -50,9 +50,7 @@ body {
   /*      height: 100vh;               */
 }
 
-
 /*-------------------------------- Header ------------------------------*/
-
 
 .header {
   display: flex;
@@ -140,7 +138,6 @@ body {
   transform: scale(1.2);
 }
 
-
 /*-------------------------------- Welcome div ------------------------------*/
 
 .welcome-div {
@@ -187,7 +184,6 @@ body {
   }
 }
 
-
 /*-------------------------------- User Info  ------------------------------*/
 
 .left-container {
@@ -199,6 +195,7 @@ body {
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
   overflow-y: auto;
   display: none;
+  transition: 0.2s ease-in;
 }
 
 .user-ui {
@@ -241,9 +238,7 @@ body {
   text-decoration: underline;
 }
 
-
 /*-------------------------------- Feed-div ------------------------------*/
-
 
 .feed-div {
   height: 100vh;
@@ -283,7 +278,6 @@ body {
   background: rgb(177, 203, 235);
   margin: 0;
   border-bottom: 2px solid black;
-  
 }
 
 .post:hover {
@@ -310,7 +304,6 @@ body {
 }
 
 /*-------------------------------- other users ------------------------------*/
-
 
 .others-div {
   grid-column: 3;
@@ -408,10 +401,7 @@ body {
   filter: opacity(85%);
 }
 
-
-
 /*-------------------------------- Todos ------------------------------*/
-
 
 .todos-container {
   position: relative;
@@ -458,9 +448,7 @@ body {
   margin: 0;
 }
 
-
 /*-------------------------------- Likes-container ------------------------------*/
-
 
 .like-container {
   margin-top: 8px;
@@ -501,9 +489,7 @@ body {
   }
 }
 
-
 /*-------------------------------- Responsive design ------------------------------*/
-
 
 @media (max-width: 500px) {
   body {
@@ -560,9 +546,7 @@ body {
   .post {
     margin: 8px 0;
   }
-
 }
-
 
 /* Skeleton styles för feed-div och others-div */
 .skeleton-post,
@@ -618,9 +602,15 @@ body {
 }
 
 @keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.6; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Responsiv design för skeleton screens */
