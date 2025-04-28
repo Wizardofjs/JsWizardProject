@@ -33,13 +33,13 @@ body {
   font-family: 'Poppins', sans-serif;
   color: var(--color-light);
   min-height: 100vh;
-  padding: 0;
+  padding: 0px 10%;
 }
 
 .container {
   display: grid;
   grid-template-rows: auto 1fr;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 2.2fr 1fr;
   gap: var(--size-s);
   background: var(--color-dark-v3);
   border-radius: 0;
@@ -76,7 +76,7 @@ body {
   display: inline-block;
   font-size: var(--font-size);
   color: var(--color-light-v2);
-  z-index: 1; 
+  z-index: 1;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -256,7 +256,7 @@ body {
 
 .feed-div h2 {
   font-size: 2rem;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin-bottom: 15px;
 }
 
@@ -266,7 +266,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #243c84;
+  background: transparent;
   border-radius: 10px;
 }
 
@@ -283,7 +283,7 @@ body {
 /*-------------------------------- Posts and comments ------------------------------*/
 
 .post {
-  color:white;
+  color: white;
   display: flex;
   flex-direction: column;
   padding: var(--size-m);
@@ -300,7 +300,7 @@ body {
   border-top: 1px solid rgba(20, 20, 61, 0.3);
   margin-top: 10px;
   padding-top: 10px;
-  background: transparent;;
+  background: transparent;
   border-radius: 0 0 8px 8px;
 }
 
@@ -315,12 +315,10 @@ body {
   transition: background 0.2s ease;
 }
 
-
 .username {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 1.7rem;
-  color: rgb(255, 255, 255); 
-
+  color: rgb(255, 255, 255);
 }
 
 .username:hover {
