@@ -31,7 +31,6 @@ export function loadUsers() {
         showUserDetails(user, userImage?.image, userColor);
         renderTodos(user.id);
         showAllPostUser(user.id);
-        scrollAllToTop();
       });
       console.log(`Bild för ${user.name}:`, userImage?.image);
     });
