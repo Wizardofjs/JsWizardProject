@@ -76,7 +76,7 @@ body {
   display: inline-block;
   font-size: var(--font-size);
   color: var(--color-light-v2);
-  z-index: 1; /* Behövs denna?  / Tom */
+  z-index: 1; 
   transition: transform 0.3s ease-in-out;
 }
 
@@ -254,6 +254,12 @@ body {
   overflow-y: auto;
 }
 
+.feed-div h2 {
+  font-size: 2rem;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 15px;
+}
+
 ::-webkit-scrollbar {
   width: 1rem;
   height: 10px;
@@ -277,23 +283,24 @@ body {
 /*-------------------------------- Posts and comments ------------------------------*/
 
 .post {
+  color:white;
   display: flex;
   flex-direction: column;
   padding: var(--size-m);
-  background: rgb(177, 203, 235);
+  background: rgb(36, 39, 79);
   margin: 0;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgb(255, 255, 255);
 }
 
 .post:hover {
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+  background: rgb(58, 62, 104);
 }
 
 .post-comments {
   border-top: 1px solid rgba(20, 20, 61, 0.3);
   margin-top: 10px;
   padding-top: 10px;
-  background: rgba(255, 215, 0, 0.05);
+  background: transparent;;
   border-radius: 0 0 8px 8px;
 }
 
@@ -302,7 +309,7 @@ body {
   color: #ffffff;
   border: 1px solid rgba(255, 215, 0, 0.1);
   padding: 10px;
-  background: rgba(35, 56, 69, 0.607);
+  background: rgba(26, 91, 132, 0.607);
   border-radius: 5px;
   font-size: 0.9rem;
   transition: background 0.2s ease;
@@ -312,7 +319,7 @@ body {
 .username {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 1.7rem;
-  color: black; 
+  color: rgb(255, 255, 255); 
 
 }
 
