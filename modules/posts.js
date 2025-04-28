@@ -1,5 +1,4 @@
 // post.js
-
 import { getDataFromSessionStorage } from './fetch.js';
 import { createPostElement } from './user.js'; // Import createPostElement from user.js
 import { showComments } from './comments.js';
@@ -7,32 +6,7 @@ import { showUserDetails } from './user.js';
 import { renderTodos } from './todos.js';
 import { scrollAllToTop } from './ui.js';
 
-// Funktion för att skapa och returnera post-element
-function createPostElement(post, user, showUsername = true) {
-  const article = document.createElement('article');
-  article.classList.add('post');
-  article.setAttribute('post-id', post.id);
-  article.setAttribute('user-id', post.userId);
-
-  const header = document.createElement('header');
-  const h2 = document.createElement('h2');
-
-  // Only show username if showUsername is true
-  if (showUsername) {
-    const username = user ? user.name : 'Okänd användare';
-    h2.textContent = username;
-  }
-  header.appendChild(h2);
-  article.appendChild(header);
-
-  const pContent = document.createElement('p');
-  pContent.innerHTML = post.body.replace(/\n/g, '<br>');
-  article.appendChild(pContent);
-
-  return article;
-}
-
-// Funktion för att visa första användare och dess inlägg
+// Function for displaying posts
 export function showPosts() {
   const posts = getDataFromSessionStorage('posts');
   const users = getDataFromSessionStorage('users');
@@ -41,10 +15,10 @@ export function showPosts() {
     const postsContainer = document.querySelector('.feed-div');
     postsContainer.innerHTML = '';
 
-    // Object för att hålla koll på vilken användare
+    // Object for tracking users
     const seenUsers = new Set();
 
-    // Filtrera 1 post per användare
+    // Filter to show one post per user
     const uniquePosts = posts.filter((post) => {
       if (!seenUsers.has(post.userId)) {
         seenUsers.add(post.userId);
@@ -57,15 +31,15 @@ export function showPosts() {
       const user = users.find((user) => user.id === post.userId);
       const postElement = createPostElement(post, user);
 
-      // Lägg till eventlistener för att visa alla inlägg från användaren
+      // Add event listener for username click inside the post element
       const usernameElement = postElement.querySelector('header h2');
       if (usernameElement) {
         usernameElement.addEventListener('click', () => {
           const userImage = images.find(
             (img, index) => users[index]?.id === user.id
-          ); // Match image to user
+          );
           const colors = ['#65ff90', 'gray']; // Same colors as in user.js
-          const randomColor = colors[Math.floor(Math.random() * colors.length)]; // Random color
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
           showAllPostUser(user.id); // Show all posts for the user
           showUserDetails(user, userImage?.image, randomColor); // Pass user, image, and color
           renderTodos(user.id);
@@ -80,7 +54,7 @@ export function showPosts() {
   }
 }
 
-// Funktion för att visa alla inlägg från en användare
+// Function to show all posts from a user
 export function showAllPostUser(userId) {
   const posts = getDataFromSessionStorage('posts');
   const users = getDataFromSessionStorage('users');
@@ -111,36 +85,4 @@ export function showAllPostUser(userId) {
     console.log('No posts data available in sessionStorage.');
   }
   scrollAllToTop();
-}
-
-// Funktion för att visa första användare och dess inlägg
-export function showPosts() {
-  const posts = getDataFromSessionStorage('posts');
-  const users = getDataFromSessionStorage('users');
-
-  if (Array.isArray(posts) && posts.length > 0) {
-    const postsContainer = document.querySelector('.feed-div');
-    postsContainer.innerHTML = '';
-
-    // Object för att hålla koll på vilken användare
-    const seenUsers = new Set();
-
-    // Filtrera 1 post per användare
-    const uniquePosts = posts.filter((post) => {
-      if (!seenUsers.has(post.userId)) {
-        seenUsers.add(post.userId);
-        return true;
-      }
-      return false;
-    });
-
-    uniquePosts.forEach((post) => {
-      const user = users.find((user) => user.id === post.userId);
-      const postElement = createPostElement(post, user);
-
-      postsContainer.appendChild(postElement);
-    });
-  } else {
-    console.log('No posts data available in sessionStorage.');
-  }
 }
