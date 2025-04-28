@@ -308,6 +308,18 @@ body {
   transition: background 0.2s ease;
 }
 
+
+.username {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.7rem;
+  color: black; 
+
+}
+
+.username:hover {
+  color: rgba(87, 67, 90, 0.801);
+}
+
 /*-------------------------------- other users ------------------------------*/
 
 .others-div {
