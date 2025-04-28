@@ -564,3 +564,69 @@ body {
 }
 
 
+/* Skeleton styles för feed-div och others-div */
+.skeleton-post,
+.skeleton-user {
+  display: flex;
+  flex-direction: column;
+  padding: var(--size-m);
+  background: var(--color-dark-v2); /* Mörk bakgrund för att matcha temat */
+  margin: 0;
+  border-bottom: 2px solid var(--color-dark); /* Matchar postens border */
+  border-radius: 8px;
+}
+
+.skeleton-user {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  background: #3a4a8a; /* Matchar other-user */
+  margin: 8px 0;
+}
+
+.skeleton-post-title {
+  width: 60%;
+  height: 20px;
+  background: var(--color-light-v2); /* Ljusgrå för placeholder */
+  border-radius: 4px;
+  margin-bottom: 10px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-post-content {
+  width: 100%;
+  height: 60px;
+  background: var(--color-light-v2);
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-user-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--color-light-v2);
+  border-radius: 50%; /* Cirkel för att matcha ikon */
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-user-text {
+  width: 70%;
+  height: 15px;
+  background: var(--color-light-v2);
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Responsiv design för skeleton screens */
+@media (max-width: 500px) {
+  .skeleton-post,
+  .skeleton-user {
+    padding: 10px;
+  }
+}
