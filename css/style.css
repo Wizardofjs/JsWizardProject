@@ -378,8 +378,9 @@ body {
 }
 
 #wizardAnimated {
-  height: 310px;
+  height: auto;
   width: 100%;
+
 }
 
 @keyframes glowing {
