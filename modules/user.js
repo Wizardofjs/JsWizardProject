@@ -32,6 +32,7 @@ export function loadUsers() {
                 showUserDetails(user, userImage?.image, userColor); // Skicka färgen till funktionen
                 renderTodos(user.id);
                 showAllPostUser(user.id);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             console.log(`Bild för ${user.name}:`, userImage?.image);
         });
