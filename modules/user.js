@@ -17,7 +17,6 @@ export function loadUsers() {
     users.forEach((user, index) => {
       const userElement = document.createElement('button');
       const colors = ['#65ff90', 'gray'];
-      const colors = ['#65ff90', 'gray'];
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
       userElement.classList.add(randomColor === '#65ff90' ? 'green' : 'gray');
       userElement.classList.add('other-user');
