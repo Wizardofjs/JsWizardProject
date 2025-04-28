@@ -2,8 +2,7 @@
 import { getDataFromSessionStorage } from './fetch.js';
 import { renderTodos } from './todos.js';
 import { showAllPostUser } from './posts.js';
-
-import { showUserDiv } from './ui.js';
+import { scrollAllToTop, showUserDiv } from './ui.js';
 
 // Skapar en async funktion loadUsers()
 export function loadUsers() {
@@ -32,7 +31,7 @@ export function loadUsers() {
         showUserDetails(user, userImage?.image, userColor); // Skicka färgen till funktionen
         renderTodos(user.id);
         showAllPostUser(user.id);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollAllToTop();
       });
       console.log(`Bild för ${user.name}:`, userImage?.image);
     });
