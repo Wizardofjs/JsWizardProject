@@ -160,4 +160,8 @@ export function startBroomAnimation() {
   setTimeout(() => {
     broomDiv.classList.add('animate-broom');
   }, 50);
+
+  broomDiv.addEventListener('animationend', () => {
+    broomDiv.remove();
+  });
 }
