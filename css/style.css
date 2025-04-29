@@ -45,14 +45,13 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr 2.2fr 1fr;
-  gap: var(--size-s);
   background: var(--color-dark-v3);
   border-radius: 0;
   height: 100vh;
 }
 
 /*-------------------------------- Header ------------------------------*/
-
+footer,
 .header {
   display: flex;
   justify-content: center;
@@ -147,11 +146,9 @@ body {
 /*-------------------------------- Welcome div ------------------------------*/
 
 .welcome-div {
-  margin-top: 40px;
-  margin-left: 25px;
   height: 700px;
   grid-column: 1;
-  padding: var(--size-m);
+  margin: var(--size-m);
   background-image: url(../img/welcomeimage.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -224,7 +221,8 @@ body {
 .feed-div {
   color: black;
   grid-column: 2;
-  padding: var(--size-m);
+  padding-right: var(--size-m);
+  margin: var(--size-m);
   background: transparent;
   overflow-y: auto;
 }
@@ -302,9 +300,16 @@ body {
 
 /*-------------------------------- other users ------------------------------*/
 
+.right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .others-div {
   grid-column: 3;
   padding: var(--size-m);
+  margin: var(--size-m);
   background: #2a3a6a;
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
   overflow-y: auto;
@@ -368,8 +373,8 @@ body {
 }
 
 #wizardAnimated {
-  height: auto;
-  width: 100%;
+  max-width: 100%;
+  margin: var(--size-m);
 }
 
 @keyframes glowing {
@@ -489,11 +494,19 @@ body {
 
 footer {
   grid-column: 1 / -1;
-  padding: 10px;
+  padding: var(--size-l);
   text-align: center;
-  background: var(--color-dark);
-  color: var(--color-light);
   font-size: 0.9rem;
+  display: flex;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--color-color);
+}
+
+footer a:hover {
+  color: var(--color-drop);
 }
 
 /*-------------------------------- Responsive design ------------------------------*/
