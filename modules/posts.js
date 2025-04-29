@@ -4,7 +4,33 @@ import { showUserDetails } from './user.js';
 import { renderTodos } from './todos.js';
 import { scrollAllToTop } from './ui.js';
 
-// Function for displaying posts
+// Funktion för att skapa och returnera post-element
+function createPostElement(post, user, showUsername = true) {
+  const article = document.createElement('article');
+  article.classList.add('post');
+  article.setAttribute('post-id', post.id);
+  article.setAttribute('user-id', post.userId);
+
+  const header = document.createElement('header');
+  const h2 = document.createElement('h2');
+  h2.classList.add('username');
+
+  // Only show username if showUsername is true
+  if (showUsername) {
+    const username = user ? user.name : 'Okänd användare';
+    h2.textContent = username;
+  }
+  header.appendChild(h2);
+  article.appendChild(header);
+
+  const pContent = document.createElement('p');
+  pContent.innerHTML = post.body.replace(/\n/g, '<br>');
+  article.appendChild(pContent);
+
+  return article;
+}
+
+// Funktion för att visa första användare och dess inlägg
 export function showPosts() {
   const posts = getDataFromSessionStorage('posts');
   const users = getDataFromSessionStorage('users');
@@ -37,12 +63,10 @@ export function showPosts() {
       if (usernameElement) {
         usernameElement.addEventListener('click', () => {
           const userImage = images.find(
-            (img, index) => users[index]?.id === user.id
+            (_img, index) => users[index]?.id === user.id
           );
-          const colors = ['#65ff90', 'gray']; // Same colors as in user.js
-          const randomColor = colors[Math.floor(Math.random() * colors.length)];
-          showAllPostUser(user.id); // Show all posts for the user
-          showUserDetails(user, userImage?.image, randomColor); // Pass user, image, and color
+          showAllPostUser(user.id);
+          showUserDetails(user, userImage?.image);
           renderTodos(user.id);
           scrollAllToTop();
         });
@@ -64,7 +88,6 @@ export function showAllPostUser(userId) {
   const postsContainer = document.querySelector('.feed-div');
   const fragment = document.createDocumentFragment();
 
-  // Rensa skeleton screens
   postsContainer.innerHTML = '';
 
   if (Array.isArray(posts) && posts.length > 0) {

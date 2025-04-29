@@ -33,13 +33,13 @@ body {
   font-family: 'Poppins', sans-serif;
   color: var(--color-light);
   min-height: 100vh;
-  padding: 0;
+  padding: 0px 10%;
 }
 
 .container {
   display: grid;
   grid-template-rows: auto 1fr;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 2.2fr 1fr;
   gap: var(--size-s);
   background: var(--color-dark-v3);
   border-radius: 0;
@@ -50,9 +50,7 @@ body {
   /*      height: 100vh;               */
 }
 
-
 /*-------------------------------- Header ------------------------------*/
-
 
 .header {
   display: flex;
@@ -78,7 +76,7 @@ body {
   display: inline-block;
   font-size: var(--font-size);
   color: var(--color-light-v2);
-  z-index: 1; /* Behövs denna?  / Tom */
+  z-index: 1;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -139,12 +137,17 @@ body {
 .header i:hover {
   transform: scale(1.2);
 }
-
+.user-header {
+  display: flex;
+  justify-content: center;
+  color: var(--color-light);
+}
 
 /*-------------------------------- Welcome div ------------------------------*/
 
 .welcome-div {
   margin-top: 40px;
+  margin-left:25px;
   height: 700px;
   grid-column: 1;
   padding: var(--size-m);
@@ -187,7 +190,6 @@ body {
   }
 }
 
-
 /*-------------------------------- User Info  ------------------------------*/
 
 .left-container {
@@ -199,23 +201,17 @@ body {
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
   overflow-y: auto;
   display: none;
+  transition: 0.2s ease-in;
 }
 
 .user-ui {
   padding: var(--size-m);
-  background: #3a4a8a;
   border-radius: 8px;
   text-align: left;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.user-ui i.fa-user {
-  font-size: 2.5rem;
-  color: #ffd700;
-  margin-right: 10px;
-  vertical-align: middle;
-  filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
-}
+
 
 .user-ui h2 {
   font-size: 1.5rem;
@@ -225,25 +221,11 @@ body {
   font-weight: 700;
 }
 
-.user-ui p {
-  font-size: 0.95rem;
-  color: #d0d0d0;
-  margin: 6px 0;
-  line-height: 1.4;
-}
 
-.user-ui p a {
-  color: #ffd700;
-  text-decoration: none;
-}
 
-.user-ui p a:hover {
-  text-decoration: underline;
-}
 
 
 /*-------------------------------- Feed-div ------------------------------*/
-
 
 .feed-div {
   height: 100vh;
@@ -254,13 +236,19 @@ body {
   overflow-y: auto;
 }
 
+.feed-div h2 {
+  font-size: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 15px;
+}
+
 ::-webkit-scrollbar {
   width: 1rem;
   height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #243c84;
+  background: transparent;
   border-radius: 10px;
 }
 
@@ -277,24 +265,24 @@ body {
 /*-------------------------------- Posts and comments ------------------------------*/
 
 .post {
+  color: white;
   display: flex;
   flex-direction: column;
   padding: var(--size-m);
-  background: rgb(177, 203, 235);
+  background: rgb(36, 39, 79);
   margin: 0;
-  border-bottom: 2px solid black;
-  
+  border-bottom: 2px solid rgb(255, 255, 255);
 }
 
 .post:hover {
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+  background: rgb(58, 62, 104);
 }
 
 .post-comments {
   border-top: 1px solid rgba(20, 20, 61, 0.3);
   margin-top: 10px;
   padding-top: 10px;
-  background: rgba(255, 215, 0, 0.05);
+  background: transparent;
   border-radius: 0 0 8px 8px;
 }
 
@@ -303,14 +291,23 @@ body {
   color: #ffffff;
   border: 1px solid rgba(255, 215, 0, 0.1);
   padding: 10px;
-  background: rgba(35, 56, 69, 0.607);
+  background: rgba(26, 91, 132, 0.607);
   border-radius: 5px;
   font-size: 0.9rem;
   transition: background 0.2s ease;
 }
 
-/*-------------------------------- other users ------------------------------*/
+.username {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.7rem;
+  color: rgb(255, 255, 255);
+}
 
+.username:hover {
+  color: rgba(87, 67, 90, 0.801);
+}
+
+/*-------------------------------- other users ------------------------------*/
 
 .others-div {
   grid-column: 3;
@@ -378,7 +375,7 @@ body {
 }
 
 #wizardAnimated {
-  height: 310px;
+  height: auto;
   width: 100%;
 }
 
@@ -408,10 +405,7 @@ body {
   filter: opacity(85%);
 }
 
-
-
 /*-------------------------------- Todos ------------------------------*/
-
 
 .todos-container {
   position: relative;
@@ -458,9 +452,7 @@ body {
   margin: 0;
 }
 
-
 /*-------------------------------- Likes-container ------------------------------*/
-
 
 .like-container {
   margin-top: 8px;
@@ -501,17 +493,37 @@ body {
   }
 }
 
-
 /*-------------------------------- Responsive design ------------------------------*/
 
-
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   body {
     padding: 0;
   }
+  
+
+  .others-div,
+.feed-div,
+.left-container {
+  scrollbar-width: none; /* För Firefox */
+  -ms-overflow-style: none; /* För Internet Explorer och Edge */
+}
+
+.others-div::-webkit-scrollbar,
+.feed-div::-webkit-scrollbar,
+.left-container::-webkit-scrollbar {
+  display: none; /* Dölj scroll-baren för WebKit-baserade webbläsare (Chrome, Safari, etc.) */
+}
 
   .container {
     gap: 5px;
+  }
+
+  .welcome-div {
+    display: none !important;
+  }
+
+  .todos-container {
+    display: none;
   }
 
   .left-container,
@@ -532,6 +544,7 @@ body {
   }
 
   .header {
+    box-shadow: none;
     font-size: 1.3rem;
   }
 
@@ -552,17 +565,43 @@ body {
     font-size: 1.5rem;
     padding: 12px;
   }
+  
+
+  .left-container {
+    height: 450px;
+    background-color: transparent;
+    box-shadow: none;
+  }
 
   .user-ui h2 {
     font-size: 1.3rem;
   }
 
+  .user-ui .post h2 {
+    display: none !important;
+  }
+
+  .user-ui img {
+    height: 300px;
+    width: auto;
+  }
+
+  header.user-header {
+    display: none;
+  }
+
+  .feed-div  {
+    padding-top: 0px;
+  }
+
+  .feed-div h2 {
+    font-size: 1.4rem;
+  }
+
   .post {
     margin: 8px 0;
   }
-
 }
-
 
 /* Skeleton styles för feed-div och others-div */
 .skeleton-post,
@@ -618,9 +657,15 @@ body {
 }
 
 @keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.6; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Responsiv design för skeleton screens */

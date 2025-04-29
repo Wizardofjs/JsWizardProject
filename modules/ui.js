@@ -58,8 +58,12 @@ export function showUserDiv() {
   const leftContainer = document.getElementsByClassName('left-container')[0];
   const welcomeDiv = document.querySelector('.welcome-div');
   if (leftContainer) {
+    leftContainer.style.transform = 'translateX(-1000px)';
     leftContainer.style.display = 'block';
     welcomeDiv.style.display = 'none';
+    setTimeout(() => {
+      leftContainer.style.transform = 'translateX(0px)';
+    }, 200);
   }
 }
 
@@ -124,10 +128,10 @@ export function scrollAllToTop() {
   setTimeout(() => {
     const scrollTargets = [
       document.querySelector('.feed-div'),
-      document.querySelector('.left-container')
+      document.querySelector('.left-container'),
     ];
 
-    scrollTargets.forEach(el => {
+    scrollTargets.forEach((el) => {
       if (el) {
         el.scrollTo({ top: 0, behavior: 'smooth' });
       }
