@@ -47,6 +47,7 @@ export function loadUsers() {
 // Function to show user details
 export function showUserDetails(user, img) {
   const userDiv = document.querySelector('.user-ui');
+  const todosContainer = document.querySelector('.todos-container');
 
   const statusMap = JSON.parse(sessionStorage.getItem('statusMap')) || {};
   const userIndex = user.id;
@@ -58,6 +59,22 @@ export function showUserDetails(user, img) {
     <br> <h2>${user.name}</h2><br> 
     <img src="${img || 'default.jpg'}" alt="Profilbild" class="profile-pic"><br>
     <p>Username: ${user.username}<br>
-    Email: ${user.email}</p>`;
+    Email: ${user.email}</p>
+     <button id="toggle-todos-btn">Toggle Todos</button>
+     
+  `;
+
   showUserDiv();
+
+  const toggleBtn = document.getElementById('toggle-todos-btn');
+  toggleBtn.addEventListener('click', () => {
+    if (
+      todosContainer.style.display === 'none' ||
+      todosContainer.style.display === ''
+    ) {
+      todosContainer.style.display = 'block';
+    } else {
+      todosContainer.style.display = 'none';
+    }
+  });
 }

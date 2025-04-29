@@ -295,7 +295,6 @@ footer,
 /*-------------------------------- other users ------------------------------*/
 
 .right-container {
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -368,8 +367,6 @@ footer,
   opacity: 1;
 }
 
-
-
 @keyframes glowing {
   0% {
     background-position: 0 0;
@@ -441,6 +438,10 @@ footer,
 }
 .todos-title {
   margin: 0;
+}
+
+#toggle-todos-btn {
+  display: none;
 }
 
 /*-------------------------------- Likes-container ------------------------------*/
@@ -535,6 +536,10 @@ footer a:hover {
     display: none;
   }
 
+  #toggle-todos-btn {
+    display: block;
+  }
+
   .left-container,
   .feed-div,
   .others-div {
@@ -576,7 +581,6 @@ footer a:hover {
   }
 
   .left-container {
-    height: 450px;
     background-color: transparent;
     box-shadow: none;
   }
@@ -603,7 +607,7 @@ footer a:hover {
   }
 
   .feed-div h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .post {
