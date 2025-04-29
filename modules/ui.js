@@ -139,24 +139,25 @@ export function scrollAllToTop() {
   }, 50); // Justera till 100ms vid behov
 }
 
-export function startBroomAnimation() {
-  // Create broom div
+export function startBroomAnimation(event) {
+  // Only proceed if triggered by a button click with a valid position
+  if (!event || !event.clientX || !event.clientY) return;
+
   const broomDiv = document.createElement('div');
   broomDiv.classList.add('broom');
 
-  // Create image
   const img = document.createElement('img');
   img.src = 'img/broom.png';
   img.alt = "Witch's Broom";
   img.classList.add('broom-image');
 
-  // Append image to div
   broomDiv.appendChild(img);
-
-  // Append div to body
   document.body.appendChild(broomDiv);
 
-  // Trigger animation after a short delay to ensure rendering
+  // Use the event's clientX/Y for positioning
+  broomDiv.style.left = `${event.clientX}px`;
+  broomDiv.style.top = `${event.clientY}px`;
+
   setTimeout(() => {
     broomDiv.classList.add('animate-broom');
   }, 50);

@@ -32,7 +32,7 @@ export function loadUsers() {
         showUserDetails(user, userImage?.image);
         renderTodos(user.id);
         showAllPostUser(user.id);
-        startBroomAnimation();
+        startBroomAnimation(event);
       });
       console.log(`Bild för ${user.name}:`, userImage?.image);
     });
