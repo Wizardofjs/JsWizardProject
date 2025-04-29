@@ -43,7 +43,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 80px 1fr 40px;
   grid-template-columns: 1fr 2.2fr 1fr;
   background: var(--color-dark-v3);
   border-radius: 0;
@@ -57,13 +57,7 @@ footer,
   justify-content: center;
   align-items: center;
   grid-column: 1 / -1;
-  padding: var(--size-m);
-  background: linear-gradient(
-    90deg,
-    var(--color-dark),
-    var(--color-blue),
-    var(--color-dark)
-  );
+  background: var(--color-dark-v2);
   color: var(--color-light-v2);
   gap: var(--size-xs);
   text-shadow: var(--size-0) var(--size-0) var(--size-xs)
@@ -146,7 +140,7 @@ footer,
 /*-------------------------------- Welcome div ------------------------------*/
 
 .welcome-div {
-  height: 700px;
+  height: 80%;
   grid-column: 1;
   margin: var(--size-m);
   background-image: url(../img/welcomeimage.jpg);
@@ -301,12 +295,14 @@ footer,
 /*-------------------------------- other users ------------------------------*/
 
 .right-container {
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .others-div {
+  height: 100%;
   grid-column: 3;
   padding: var(--size-m);
   margin: var(--size-m);
@@ -372,10 +368,7 @@ footer,
   opacity: 1;
 }
 
-#wizardAnimated {
-  max-width: 100%;
-  margin: var(--size-m);
-}
+
 
 @keyframes glowing {
   0% {
