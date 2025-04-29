@@ -20,6 +20,7 @@
   --size-l: 20px;
   /* Font Sizes */
   --font-size: clamp(1rem, 2vw, 1.8rem);
+  --font-size-s: clamp(0.8rem, 1.2vw, 0.8rem);
 }
 
 * {
@@ -490,7 +491,7 @@ footer {
   grid-column: 1 / -1;
   padding: var(--size-l);
   text-align: center;
-  font-size: 0.9rem;
+  font-size: var(--font-size-s);
   display: flex;
 }
 
@@ -508,7 +509,7 @@ footer a:hover {
 @media (max-width: 1000px) {
   body {
     padding: 0;
-    overflow: scroll;
+    overflow-y: scroll;
   }
 
   .others-div,
