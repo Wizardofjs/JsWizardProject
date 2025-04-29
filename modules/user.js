@@ -5,6 +5,9 @@ import { showAllPostUser } from './posts.js';
 
 import { showUserDiv } from './ui.js';
 
+
+window.addEventListener('resize', moveUsersToDropdown);
+
 //Skapar en async funktion loadUsers()
 export function loadUsers(){
     try{
@@ -32,6 +35,8 @@ export function loadUsers(){
             })
             console.log(`Bild för ${user.name}:`, userImage?.image);
         });
+
+        moveUsersToDropdown();
         //Fångar eventuella errors 
     }catch (error){
         console.log('Fel vid hämtning av användare' + error);
@@ -48,4 +53,66 @@ function showUserDetails(user, img){
     <p>Username: ${user.username}<br>
     Email: ${user.email}</p>`;
     showUserDiv();
+}
+
+// Hämtar referenser till knappen och dropdown-innehållet
+const dropdownBtn = document.querySelector('.dropdown-btn');
+const dropdownContent = document.querySelector('.dropdown-content');
+
+// Eventlyssnare för att toggla visning av dropdown
+dropdownBtn.addEventListener('click', () => {
+  // Växla "show"-klassen på dropdown-content
+  dropdownContent.classList.toggle('show'); 
+  
+  // Kolla om dropdown-content är synlig eller inte
+  if (dropdownContent.classList.contains('show')) {
+    // Om den är synlig, flytta användarna till dropdown
+    moveUsersToDropdown(true);
+  } else {
+    // Om den inte är synlig, flytta tillbaka användarna till .others-div
+    moveUsersToDropdown(false);
+  }
+});
+
+// Stänger dropdown om man klickar utanför
+window.addEventListener('click', (e) => {
+  if (!dropdownBtn.contains(e.target) && !dropdownContent.contains(e.target)) {
+    dropdownContent.classList.remove('show'); // Ta bort "show"-klassen
+    moveUsersToDropdown(false); // Flytta tillbaka användarna till .others-div
+  }
+});
+
+// Funktion som anropas för att flytta användarna till eller från dropdownen
+function moveUsersToDropdown(isOpen) {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const othersDiv = document.querySelector('.others-div');
+    const userButtons = document.querySelectorAll('.other-user');
+    
+    if (window.innerWidth <= 900) {
+      if (isOpen) {
+        // Flytta användarna till dropdown-content när dropdown är öppen
+        userButtons.forEach(button => {
+          dropdownContent.appendChild(button);
+        });
+      } else {
+        // Flytta tillbaka användarna till .others-div när dropdown är stängd
+        userButtons.forEach(button => {
+          othersDiv.appendChild(button);
+        });
+      }
+
+      // Dölja .others-div när vi är i mobil-läge
+      if (othersDiv) othersDiv.style.display = 'none';
+    } else {
+      // Återställ användarna till .others-div när vi är i desktop-läge
+      userButtons.forEach(button => {
+        othersDiv.appendChild(button);
+      });
+
+      // Visa .others-div när vi är i desktop-läge
+      if (othersDiv) othersDiv.style.display = 'block';
+
+      // Stäng dropdown-content på desktop
+      dropdownContent.classList.remove('show');
+    }
 }

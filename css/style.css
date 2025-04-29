@@ -42,6 +42,10 @@ body {
   box-shadow: 0px 20px 20px rgba(60, 60, 145, 0.878);
 }
 
+.dropdown-btn{
+    display: none;
+}
+
 #headline {
     position: relative;
     display: inline-block;
@@ -341,9 +345,61 @@ body {
     grid-column: 1;
   }
 
+
   .header {
     font-size: 1.5rem;
     padding: 12px;
+    display: flex;
+  }
+
+  .navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dropdown-btn{
+    position: absolute;
+    display: block;
+    right: 0;
+    margin-right: 40px;
+    background-color: #1b2e5c;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    
+  }
+
+  .dropdown-btn i{
+    color: white;
+    
+  }
+  
+  .dropdown-content.show {
+    display: block; 
+  }
+
+
+.dropdown-content {
+  display: none; 
+  position: absolute;
+  top:0;
+  right:0;
+  margin-top: 60px;
+  margin-right: 10px;
+  background-color: #1b2e5c;
+  border-radius: 10px;
+  padding: 10px;
+
+
+}
+
+/* När den är synlig (toggled) */
+.dropdown-content.show {
+  display: block; /* Gör dropdown synlig */
+}
+  .others-div{
+    display: none;
   }
 
   .user-ui h2 {
@@ -384,6 +440,8 @@ body {
   .header {
     font-size: 1.3rem;
   }
+
+
 }
 
 .todos-container {
