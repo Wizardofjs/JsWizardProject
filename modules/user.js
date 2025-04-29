@@ -51,30 +51,32 @@ export function showUserDetails(user, img) {
 
   const statusMap = JSON.parse(sessionStorage.getItem('statusMap')) || {};
   const userIndex = user.id;
-  console.log(userIndex);
-
   const color = statusMap[userIndex] || 'yellow';
 
-  userDiv.innerHTML = `<i class="fa-solid fa-circle" style="color: ${color};"></i>
+  userDiv.innerHTML = `
+    <i class="fa-solid fa-circle" style="color: ${color};"></i>
     <br> <h2>${user.name}</h2><br> 
     <img src="${img || 'default.jpg'}" alt="Profilbild" class="profile-pic"><br>
     <p>Username: ${user.username}<br>
     Email: ${user.email}</p>
-     <button id="toggle-todos-btn">Toggle Todos</button>
-     
+    <button id="toggle-todos-btn">Todo List ⬇️</button>
   `;
 
   showUserDiv();
 
   const toggleBtn = document.getElementById('toggle-todos-btn');
+
   toggleBtn.addEventListener('click', () => {
-    if (
+    const isHidden =
       todosContainer.style.display === 'none' ||
-      todosContainer.style.display === ''
-    ) {
+      todosContainer.style.display === '';
+
+    if (isHidden) {
       todosContainer.style.display = 'block';
+      toggleBtn.textContent = 'Todo List ⬇️'; // Arrow up
     } else {
       todosContainer.style.display = 'none';
+      toggleBtn.textContent = 'Todo List ⬆️'; // Arrow down
     }
   });
 }
