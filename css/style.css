@@ -28,26 +28,27 @@
   padding: 0;
 }
 
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
 body {
   background: linear-gradient(135deg, var(--color-dark-v2), var(--color-blue));
   font-family: 'Poppins', sans-serif;
   color: var(--color-light);
-  min-height: 100vh;
   padding: 0px 10%;
 }
 
 .container {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr 2.2fr 1fr;
   gap: var(--size-s);
   background: var(--color-dark-v3);
   border-radius: 0;
-  /*    Blir strul med konfettit         */
-  /*    kommenterade ut detta under    */
-  /*                                      */
-  /*      width: 100vw;                 */
-  /*      height: 100vh;               */
+  height: 100vh;
 }
 
 /*-------------------------------- Header ------------------------------*/
@@ -147,7 +148,7 @@ body {
 
 .welcome-div {
   margin-top: 40px;
-  margin-left:25px;
+  margin-left: 25px;
   height: 700px;
   grid-column: 1;
   padding: var(--size-m);
@@ -193,7 +194,6 @@ body {
 /*-------------------------------- User Info  ------------------------------*/
 
 .left-container {
-  height: 100vh;
   grid-column: 1;
   padding: var(--size-m);
   background: #2a3a6a;
@@ -211,8 +211,6 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-
-
 .user-ui h2 {
   font-size: 1.5rem;
   color: #f0f0f0;
@@ -221,14 +219,9 @@ body {
   font-weight: 700;
 }
 
-
-
-
-
 /*-------------------------------- Feed-div ------------------------------*/
 
 .feed-div {
-  height: 100vh;
   color: black;
   grid-column: 2;
   padding: var(--size-m);
@@ -492,6 +485,17 @@ body {
     text-shadow: 0 0 0 transparent;
   }
 }
+/*-------------------------------- Footer  ------------------------------*/
+
+footer {
+  grid-column: 1 / -1;
+  padding: 10px;
+  text-align: center;
+  background: var(--color-dark);
+  color: var(--color-light);
+  font-size: 0.9rem;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+}
 
 /*-------------------------------- Responsive design ------------------------------*/
 
@@ -499,20 +503,19 @@ body {
   body {
     padding: 0;
   }
-  
 
   .others-div,
-.feed-div,
-.left-container {
-  scrollbar-width: none; /* För Firefox */
-  -ms-overflow-style: none; /* För Internet Explorer och Edge */
-}
+  .feed-div,
+  .left-container {
+    scrollbar-width: none; /* För Firefox */
+    -ms-overflow-style: none; /* För Internet Explorer och Edge */
+  }
 
-.others-div::-webkit-scrollbar,
-.feed-div::-webkit-scrollbar,
-.left-container::-webkit-scrollbar {
-  display: none; /* Dölj scroll-baren för WebKit-baserade webbläsare (Chrome, Safari, etc.) */
-}
+  .others-div::-webkit-scrollbar,
+  .feed-div::-webkit-scrollbar,
+  .left-container::-webkit-scrollbar {
+    display: none; /* Dölj scroll-baren för WebKit-baserade webbläsare (Chrome, Safari, etc.) */
+  }
 
   .container {
     gap: 5px;
@@ -565,7 +568,6 @@ body {
     font-size: 1.5rem;
     padding: 12px;
   }
-  
 
   .left-container {
     height: 450px;
@@ -590,7 +592,7 @@ body {
     display: none;
   }
 
-  .feed-div  {
+  .feed-div {
     padding-top: 0px;
   }
 
