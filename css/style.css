@@ -534,12 +534,32 @@ footer a:hover {
 
   .todos-container {
     display: none;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+  }
+
+  .todos-container.show {
+    display: block;
+    transform: translateX(0);
   }
 
   #toggle-todos-btn {
+    margin-top: 1rem;
+    background: none;
+    color: var(--color-light);
     display: block;
+    border: var(--size-1) solid;
+    padding: var(--size-s);
+    border-radius: 10px;
   }
 
+  #toggle-todos-btn:hover {
+    background-color: var(--color-blue);
+  }
+
+  #toggle-todos-btn:active {
+    transform: scale(1.1);
+  }
   .left-container,
   .feed-div,
   .others-div {

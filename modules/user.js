@@ -59,24 +59,29 @@ export function showUserDetails(user, img) {
     <img src="${img || 'default.jpg'}" alt="Profilbild" class="profile-pic"><br>
     <p>Username: ${user.username}<br>
     Email: ${user.email}</p>
-    <button id="toggle-todos-btn">Todo List ⬇️</button>
+    <button id="toggle-todos-btn">Todo List <i class="fa fa-arrow-down" aria-hidden="true"></i></button>
   `;
 
   showUserDiv();
 
   const toggleBtn = document.getElementById('toggle-todos-btn');
-
   toggleBtn.addEventListener('click', () => {
-    const isHidden =
-      todosContainer.style.display === 'none' ||
-      todosContainer.style.display === '';
+    const isHidden = !todosContainer.classList.contains('show');
 
     if (isHidden) {
       todosContainer.style.display = 'block';
-      toggleBtn.textContent = 'Todo List ⬇️'; // Arrow up
+      setTimeout(() => {
+        todosContainer.classList.add('show');
+      }, 10);
+      toggleBtn.innerHTML =
+        'Todo List <i class="fa fa-arrow-up" aria-hidden="true"></i>';
     } else {
-      todosContainer.style.display = 'none';
-      toggleBtn.textContent = 'Todo List ⬆️'; // Arrow down
+      todosContainer.classList.remove('show');
+      setTimeout(() => {
+        todosContainer.style.display = 'none';
+      }, 400);
+      toggleBtn.innerHTML =
+        'Todo List <i class="fa fa-arrow-down" aria-hidden="true"></i>';
     }
   });
 }
