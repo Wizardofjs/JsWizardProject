@@ -495,13 +495,35 @@ body {
 
 /*-------------------------------- Responsive design ------------------------------*/
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   body {
     padding: 0;
   }
+  
+
+  .others-div,
+.feed-div,
+.left-container {
+  scrollbar-width: none; /* För Firefox */
+  -ms-overflow-style: none; /* För Internet Explorer och Edge */
+}
+
+.others-div::-webkit-scrollbar,
+.feed-div::-webkit-scrollbar,
+.left-container::-webkit-scrollbar {
+  display: none; /* Dölj scroll-baren för WebKit-baserade webbläsare (Chrome, Safari, etc.) */
+}
 
   .container {
     gap: 5px;
+  }
+
+  .welcome-div {
+    display: none !important;
+  }
+
+  .todos-container {
+    display: none;
   }
 
   .left-container,
@@ -522,6 +544,7 @@ body {
   }
 
   .header {
+    box-shadow: none;
     font-size: 1.3rem;
   }
 
@@ -542,9 +565,37 @@ body {
     font-size: 1.5rem;
     padding: 12px;
   }
+  
+
+  .left-container {
+    height: 450px;
+    background-color: transparent;
+    box-shadow: none;
+  }
 
   .user-ui h2 {
     font-size: 1.3rem;
+  }
+
+  .user-ui .post h2 {
+    display: none !important;
+  }
+
+  .user-ui img {
+    height: 300px;
+    width: auto;
+  }
+
+  header.user-header {
+    display: none;
+  }
+
+  .feed-div  {
+    padding-top: 0px;
+  }
+
+  .feed-div h2 {
+    font-size: 1.4rem;
   }
 
   .post {
