@@ -1,7 +1,7 @@
 import { getDataFromSessionStorage } from './fetch.js';
 import { showAllPostUser } from './posts.js';
 import { renderTodos } from './todos.js';
-import { showUserDiv } from './ui.js';
+import { showUserDiv, startBroomAnimation } from './ui.js';
 
 export function loadUsers() {
   try {
@@ -32,6 +32,7 @@ export function loadUsers() {
         showUserDetails(user, userImage?.image);
         renderTodos(user.id);
         showAllPostUser(user.id);
+        startBroomAnimation();
       });
       console.log(`Bild för ${user.name}:`, userImage?.image);
     });

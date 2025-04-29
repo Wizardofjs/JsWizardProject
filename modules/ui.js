@@ -138,3 +138,26 @@ export function scrollAllToTop() {
     });
   }, 50); // Justera till 100ms vid behov
 }
+
+export function startBroomAnimation() {
+  // Create broom div
+  const broomDiv = document.createElement('div');
+  broomDiv.classList.add('broom');
+
+  // Create image
+  const img = document.createElement('img');
+  img.src = 'img/broom.png';
+  img.alt = "Witch's Broom";
+  img.classList.add('broom-image');
+
+  // Append image to div
+  broomDiv.appendChild(img);
+
+  // Append div to body
+  document.body.appendChild(broomDiv);
+
+  // Trigger animation after a short delay to ensure rendering
+  setTimeout(() => {
+    broomDiv.classList.add('animate-broom');
+  }, 50);
+}
