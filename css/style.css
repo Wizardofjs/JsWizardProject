@@ -532,10 +532,10 @@ footer a:hover {
     display: none !important;
   }
 
-  /*   .todos-container {
+  .todos-container {
     display: none;
   }
- */
+
   #toggle-todos-btn {
     display: block;
   }
@@ -581,7 +581,6 @@ footer a:hover {
   }
 
   .left-container {
-    height: 450px;
     background-color: transparent;
     box-shadow: none;
   }
