@@ -507,6 +507,7 @@ footer a:hover {
 @media (max-width: 1000px) {
   body {
     padding: 0;
+    overflow: scroll;
   }
 
   .others-div,
