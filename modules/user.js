@@ -1,7 +1,7 @@
 import { getDataFromSessionStorage } from './fetch.js';
 import { showAllPostUser } from './posts.js';
 import { renderTodos } from './todos.js';
-import { showUserDiv, startBroomAnimation } from './ui.js';
+import { showUserDiv, startBroomAnimation, scrollAllToTop } from './ui.js';
 
 export function loadUsers() {
   try {
@@ -110,4 +110,7 @@ export function showUserDetails(user, img) {
         'Todo List <i class="fa fa-arrow-down" aria-hidden="true"></i>';
     }
   });
+  setTimeout(() => {
+    scrollAllToTop(); //Scrolla upp efter uppdatering av DOM
+  }, 100)
 }
