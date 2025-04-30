@@ -1,0 +1,188 @@
+/*-------------------------------- Responsive design ------------------------------*/
+
+@media (max-width: 1000px) {
+  body {
+    padding: 0;
+    overflow-y: scroll;
+  }
+
+  .others-div,
+  .feed-div,
+  .left-container {
+    scrollbar-width: none; /* För Firefox */
+    -ms-overflow-style: none; /* För Internet Explorer och Edge */
+  }
+
+  .others-div::-webkit-scrollbar,
+  .feed-div::-webkit-scrollbar,
+  .left-container::-webkit-scrollbar {
+    display: none; /* Dölj scroll-baren för WebKit-baserade webbläsare (Chrome, Safari, etc.) */
+  }
+
+  .container {
+    gap: 5px;
+  }
+
+  .welcome-div {
+    display: none !important;
+  }
+
+  .todos-container {
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    display: none;
+  }
+
+  .todos-container.show {
+    display: block;
+    transform: translateX(0);
+  }
+
+  #toggle-todos-btn {
+    margin-top: 1rem;
+    background: none;
+    color: var(--color-light);
+    display: block;
+    border: var(--size-1) solid;
+    padding: var(--size-s);
+    border-radius: 10px;
+  }
+
+  #toggle-todos-btn:hover {
+    background-color: var(--color-blue);
+  }
+
+  #toggle-todos-btn:active {
+    transform: scale(1.1);
+  }
+  .left-container,
+  .feed-div,
+  .others-div {
+    padding: 10px;
+  }
+
+  .user-ui,
+  .post {
+    padding: 10px;
+  }
+
+  .header {
+    box-shadow: none;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    height: auto;
+    gap: 8px;
+  }
+
+  .left-container,
+  .feed-div,
+  .others-div {
+    grid-column: 1;
+  }
+
+  .header {
+    padding: 12px;
+  }
+
+  .left-container {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .user-ui .post h2 {
+    display: none !important;
+  }
+
+  .user-ui img {
+    height: 300px;
+    width: auto;
+  }
+
+  header.user-header {
+    display: none;
+  }
+
+  .feed-div {
+    padding-top: 0px;
+  }
+
+  .post {
+    margin: 8px 0;
+  }
+}
+
+/* Skeleton styles för feed-div och others-div */
+.skeleton-post,
+.skeleton-user {
+  display: flex;
+  flex-direction: column;
+  padding: var(--size-m);
+  background: var(--color-dark-v2); /* Mörk bakgrund för att matcha temat */
+  margin: 0;
+  border-bottom: 2px solid var(--color-dark); /* Matchar postens border */
+  border-radius: 8px;
+}
+
+.skeleton-user {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  background: #3a4a8a; /* Matchar other-user */
+  margin: 8px 0;
+}
+
+.skeleton-post-title {
+  width: 60%;
+  height: 20px;
+  background: var(--color-light-v2); /* Ljusgrå för placeholder */
+  border-radius: 4px;
+  margin-bottom: 10px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-post-content {
+  width: 100%;
+  height: 60px;
+  background: var(--color-light-v2);
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-user-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--color-light-v2);
+  border-radius: 50%; /* Cirkel för att matcha ikon */
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-user-text {
+  width: 70%;
+  height: 15px;
+  background: var(--color-light-v2);
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsiv design för skeleton screens */
+@media (max-width: 500px) {
+  .skeleton-post,
+  .skeleton-user {
+    padding: 10px;
+  }
+}
