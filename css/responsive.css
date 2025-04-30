@@ -92,6 +92,10 @@
     box-shadow: none;
   }
 
+  .user-ui {
+    text-align: center;
+  }
+
   .user-ui .post h2 {
     display: none !important;
   }
@@ -99,6 +103,11 @@
   .user-ui img {
     height: 300px;
     width: auto;
+  }
+  
+  #toggle-todos-btn {
+
+    justify-self: center;
   }
 
   header.user-header {
