@@ -118,7 +118,12 @@ footer {
 .username:hover {
   color: var(--c);
 }
-
+.fa-circle {
+  font-size: 0.8rem; /* Gör ikonen mindre */
+  align-self: center;
+  justify-self: center;
+  margin-left: 5px;
+}
 /* Other Users */
 .other-user {
   align-items: center;

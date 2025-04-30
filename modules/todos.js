@@ -5,7 +5,6 @@ export function renderTodos(userId) {
     const todosDiv = document.querySelector('.todos-div');
 
     todosDiv.innerHTML = '';
-    console.log('Todos for user:', userId);
 
     todos.forEach((item) => {
       const todosItem = document.createElement('div');
@@ -52,7 +51,6 @@ export function sortTodos(sortToggle) {
 }
 
 document.querySelector('#sort-todos-button').addEventListener('click', () => {
-  console.log('Sort todos clicked');
   sortToggle = !sortToggle;
   sortTodos(sortToggle);
 });
