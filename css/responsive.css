@@ -30,7 +30,7 @@
     right: 0;
     margin-right: 40px;
     background-color: #1b2e5c;
-    border-radius: 6px;
+
     width: 40px;
     height: 40px;
     
@@ -38,28 +38,23 @@
 
   .dropdown-btn i{
     color: white;
-    
   }
   
   .dropdown-content.show {
     display: block; 
   }
 
-
 .dropdown-content {
   display: none; 
   position: absolute;
   top:0;
   right:0;
-  margin-top: 53px;
-  margin-right: 35px;
+  margin-top: 52px;
+  margin-right: 40px;
   background-color: #1b2e5c;
-  border-radius: 10px;
+
   padding: 10px;
-
-
 }
-
 
 .dropdown-content.show {
   display: block; 
