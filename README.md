@@ -60,19 +60,28 @@ Att tillsammans skapa en modern, användarvänlig och responsiv webbplats med fo
   - Adress
 
 - [Harry Potter API](https://hp-api.onrender.com/api/characters)
-  - hämtar bild från 10 första.
+  - Hämtar bild från 10 första.
 
 ## 🧱 Teknisk översikt
 
 ```bash
-JSWizardProject/
+Project/
+├── audio/
+│   └── Our-Mountain.mp3
+├── css/
+│   ├── base.css
+│   ├── components.css
+│   ├── effects.css
+│   ├── layout.css
+│   ├── responsive.css
+│   └── styles.css
 ├── img/
+│   ├── angrywizard.gif
+│   ├── broom.png
 │   ├── favicon.ico
 │   ├── wand.png
-│   └── wand2.png
-├── css/
-│   ├── effect.css
-│   └── style.css
+│   ├── wand2.png
+│   └── welcomeimage.jpg
 ├── modules/
 │   ├── comments.js
 │   ├── fetch.js
