@@ -53,8 +53,7 @@ export function showUserDetails(user, img) {
   const color = statusMap[userIndex] || 'yellow';
 
   userDiv.innerHTML = `
-    <i class="fa-solid fa-circle" style="color: ${color};"></i>
-    <br> <h2>${user.name}</h2><br> 
+    <br> <h2>${user.name}<i class="fa-solid fa-circle" style="color: ${color};"></i></h2><br> 
     <img src="${img || 'default.jpg'}" alt="Profilbild" class="profile-pic"><br>
     <p>Username: ${user.username}<br>
     Email: ${user.email}</p>
