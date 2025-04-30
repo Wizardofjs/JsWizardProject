@@ -29,9 +29,32 @@ footer {
 .user-header {
   color: var(--color-light);
   display: flex;
-  justify-content: center;
+  padding-bottom: 1rem;
 }
 
+.back-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-light);
+  background: none;
+  border: 1px solid var(--color-light);
+  border-radius: 6px;
+  cursor: url(../img/wand2.png) 0 0, pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  bottom: 3rem;
+  position: absolute;
+}
+
+.back-button:hover {
+  background-color: var(--color-blue);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--color-light);
+}
+
+.back-button:active {
+  background-color: #d0d0d0;
+}
 #headline {
   color: var(--color-light-v2);
   display: inline-block;
@@ -61,25 +84,25 @@ footer {
 
 /* User Info */
 .user-ui {
-  border-radius: 8px;
+  border-radius: var(--size-xs);
   padding: var(--size-m);
   text-align: left;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .user-ui h2 {
-  color: #f0f0f0;
+  color: var(--color-light);
   display: inline-block;
   font-size: var(--font-size-m);
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: var(--size-xs);
 }
 
 /* Posts and Comments */
 .post {
   background: rgb(36, 39, 79);
   border-bottom: 2px solid rgb(255, 255, 255);
-  color: white;
+  color: var(--color-light);
   display: flex;
   flex-direction: column;
   padding: var(--size-m);
@@ -101,7 +124,7 @@ footer {
   background: rgba(26, 91, 132, 0.607);
   border: 1px solid rgba(255, 215, 0, 0.1);
   border-radius: 5px;
-  color: #ffffff;
+  color: var(--color-light);
   font-size: var(--font-size-s);
   margin-top: 5px;
   padding: 10px;
@@ -109,15 +132,26 @@ footer {
 }
 
 .username {
-  color: rgb(255, 255, 255);
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
   font-size: var(--font-size-m);
+  background: linear-gradient(90deg, #24274fb2, #5056af, #24274f98);
+  padding: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: url('../img/wand2.png') 0 0, auto;
+  border-radius: 5px;
+  text-align: center;
   margin-bottom: 1rem;
 }
-
 .username:hover {
-  color: var(--c);
+  color: var(--color-primary);
 }
+
+.username:active {
+  transform: scale(1.2);
+  text-shadow: 2px 2px 5px rgba(106, 17, 203, 0.3);
+}
+
 .fa-circle {
   font-size: 0.8rem; /* Gör ikonen mindre */
   align-self: center;
@@ -258,7 +292,8 @@ footer a {
 }
 
 footer a:hover {
-  color: var(--color-drop);
+  color: var(--color-primary);
+  cursor: url('../img/wand2.png') 1 1, pointer;
 }
 
 /* Scrollbar */

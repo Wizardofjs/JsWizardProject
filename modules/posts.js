@@ -5,23 +5,21 @@ import { renderTodos } from './todos.js';
 import { scrollAllToTop } from './ui.js';
 
 // Funktion för att skapa och returnera post-element
-function createPostElement(post, user, showUsername = true) {
+function createPostElement(post, user, showHeader = true) {
   const article = document.createElement('article');
   article.classList.add('post');
   article.setAttribute('post-id', post.id);
   article.setAttribute('user-id', post.userId);
 
-  const header = document.createElement('header');
-  const h2 = document.createElement('h2');
-  h2.classList.add('username');
-
-  // Only show username if showUsername is true
-  if (showUsername) {
+  if (showHeader) {
+    const header = document.createElement('header');
+    const h2 = document.createElement('h2');
+    h2.classList.add('username');
     const username = user ? user.name : 'Okänd användare';
     h2.textContent = username;
+    header.appendChild(h2);
+    article.appendChild(header);
   }
-  header.appendChild(h2);
-  article.appendChild(header);
 
   const pContent = document.createElement('p');
   pContent.innerHTML = post.body.replace(/\n/g, '<br>');
@@ -95,8 +93,18 @@ export function showAllPostUser(userId) {
     if (user) {
       const header = document.createElement('header');
       header.classList.add('user-header');
+
+      const backButton = document.createElement('button');
+      backButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
+      backButton.classList.add('back-button');
+      backButton.addEventListener('click', () => {
+        location.reload();
+      });
+
       const userHeader = document.createElement('h2');
-      userHeader.textContent = `${user.name}`;
+      userHeader.textContent = `All post of ${user.name}`;
+
+      header.appendChild(backButton);
 
       header.appendChild(userHeader);
       fragment.appendChild(header);
