@@ -76,7 +76,6 @@ Project/
 │   ├── responsive.css
 │   └── styles.css
 ├── img/
-│   ├── angrywizard.gif
 │   ├── broom.png
 │   ├── favicon.ico
 │   ├── wand.png
