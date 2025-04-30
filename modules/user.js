@@ -1,7 +1,7 @@
 import { getDataFromSessionStorage } from './fetch.js';
 import { showAllPostUser } from './posts.js';
-
-import { showUserDiv } from './ui.js';
+import { renderTodos } from './todos.js';
+import { showUserDiv, startBroomAnimation, scrollAllToTop } from './ui.js';
 
 
 window.addEventListener('resize', moveUsersToDropdown);
@@ -66,7 +66,7 @@ export function showUserDetails(user, img) {
   showUserDiv();
 
   // Initialize todo container state based on screen size
-  const isFullscreen = window.innerWidth >= 768; // Mobile breakpoint
+  const isFullscreen = window.innerWidth >= 768; 
   todosContainer.style.display = isFullscreen ? 'block' : 'none';
   todosContainer.classList.toggle('show', isFullscreen);
 
