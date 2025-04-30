@@ -90,29 +90,23 @@ function moveUsersToDropdown(isOpen) {
     
     if (window.innerWidth <= 900) {
       if (isOpen) {
-        // Flytta användarna till dropdown-content när dropdown är öppen
         userButtons.forEach(button => {
           dropdownContent.appendChild(button);
         });
       } else {
-        // Flytta tillbaka användarna till .others-div när dropdown är stängd
         userButtons.forEach(button => {
           othersDiv.appendChild(button);
         });
       }
 
-      // Dölja .others-div när vi är i mobil-läge
       if (othersDiv) othersDiv.style.display = 'none';
     } else {
-      // Återställ användarna till .others-div när vi är i desktop-läge
       userButtons.forEach(button => {
         othersDiv.appendChild(button);
       });
 
-      // Visa .others-div när vi är i desktop-läge
       if (othersDiv) othersDiv.style.display = 'block';
 
-      // Stäng dropdown-content på desktop
       dropdownContent.classList.remove('show');
     }
 }
