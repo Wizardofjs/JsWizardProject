@@ -67,59 +67,6 @@ export function showUserDiv() {
   }
 }
 
-
-
-export function loadMusic() {
-  // Create audio element
-  const audio = document.createElement('audio');
-  audio.src = './audio/Our-Mountain.mp3';
-  audio.type = 'audio/mpeg';
-  audio.loop = true;
-  audio.volume = 0;
-  document.body.appendChild(audio);
-
-  const playBtn = document.getElementById('wand');
-  const pauseBtn = document.getElementById('hat');
-
-  let isPlaying = false;
-  let isFadingIn = false;
-
-  // Preload the audio
-  audio.preload = 'auto'; // Ensures the audio file is preloaded
-
-  // Wait for the audio to be ready to play
-  audio.addEventListener('canplaythrough', () => {
-    playBtn.disabled = false; // Enable play button once audio is ready
-  });
-
-  playBtn.addEventListener('click', () => {
-    if (!isPlaying && !isFadingIn) {
-      audio.play().catch((err) => console.error('Audio play error:', err)); // Handle potential error
-
-      let vol = 0;
-      isFadingIn = true;
-      const fadeIn = setInterval(() => {
-        if (vol < 0.02) {
-          vol += 0.0003;
-          audio.volume = Math.min(vol, 0.02);
-        } else {
-          clearInterval(fadeIn);
-          isFadingIn = false;
-        }
-      }, 200);
-
-      isPlaying = true;
-    }
-  });
-
-  pauseBtn.addEventListener('click', () => {
-    if (isPlaying) {
-      audio.pause();
-      isPlaying = false;
-    }
-  });
-}
-
 export function scrollAllToTop() {
   const isMobile = window.innerWidth <= 768;
   //På mobil, används document.documentElement.scrollTo för att säkerställa att hela dokumentet scrollas
