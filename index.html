@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enkel Layout</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="./css/effect.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -23,11 +19,11 @@
     />
   </head>
   <body>
-    <div class="container">
-      <div class="header">
-        <i id="hat" class="fa-solid fa-hat-wizard"></i><h1 id="headline">Wizards</h1><i
-          class="fa-solid fa-wand-sparkles"
-        ></i>
+    <main class="container">
+      <header class="header">
+        <i id="hat" class="fa-solid fa-hat-wizard"></i>
+        <h1 id="headline">Wizards</h1>
+        <i id="wand" class="fa-solid fa-wand-sparkles"></i>
         <div class="navbar">
         <button class="dropdown-btn">
         <i class="fas fa-bars"></i>
@@ -35,19 +31,87 @@
         <div class="dropdown-content">
         </div>
 </div>
-      </div>
+      </header>
       <div class="welcome-div"></div>
-      <div class="user-div">
+      <aside class="left-container">
         <div class="user-ui"></div>
         <div class="todos-container">
           <h3>Todos</h3>
-          <div class="todos-div"></div> 
-        </div> 
-      </div>
-      <div class="feed-div">
-      </div>
-      <div class="others-div"></div>
-    </div>
+          <i id="sort-todos-button" class="bx bx-sort-alt-2"></i>
+          <div class="todos-div"></div>
+        </div>
+      </aside>
+      <section class="feed-div">
+        <!-- Skeleton för inlägg -->
+        <div class="skeleton-post">
+          <div class="skeleton-post-title"></div>
+          <div class="skeleton-post-content"></div>
+        </div>
+        <div class="skeleton-post">
+          <div class="skeleton-post-title"></div>
+          <div class="skeleton-post-content"></div>
+        </div>
+        <div class="skeleton-post">
+          <div class="skeleton-post-title"></div>
+          <div class="skeleton-post-content"></div>
+        </div>
+        <div class="skeleton-post">
+          <div class="skeleton-post-title"></div>
+          <div class="skeleton-post-content"></div>
+        </div>
+        <div class="skeleton-post">
+          <div class="skeleton-post-title"></div>
+          <div class="skeleton-post-content"></div>
+        </div>
+        <div class="skeleton-post">
+          <div class="skeleton-post-title"></div>
+          <div class="skeleton-post-content"></div>
+        </div>
+      </section>
+      <aside class="right-container">
+        <div class="others-div">
+          <!-- Skeleton för andra användare -->
+          <div class="skeleton-user">
+            <div class="skeleton-user-icon"></div>
+            <div class="skeleton-user-text"></div>
+          </div>
+          <div class="skeleton-user">
+            <div class="skeleton-user-icon"></div>
+            <div class="skeleton-user-text"></div>
+          </div>
+          <div class="skeleton-user">
+            <div class="skeleton-user-icon"></div>
+            <div class="skeleton-user-text"></div>
+          </div>
+          <div class="skeleton-user">
+            <div class="skeleton-user-icon"></div>
+            <div class="skeleton-user-text"></div>
+          </div>
+          <div class="skeleton-user">
+            <div class="skeleton-user-icon"></div>
+            <div class="skeleton-user-text"></div>
+          </div>
+          <div class="skeleton-user">
+            <div class="skeleton-user-icon"></div>
+            <div class="skeleton-user-text"></div>
+          </div>
+        </div>
+      </aside>
+      <footer>
+        <p>
+          &copy; 2025 JS Wizards. Created by Thelma, Tom, Hanna, Alexander and
+          Kevin.
+        </p>
+        <p>
+          <a
+            href="https://github.com/Wizardofjs/JsWizardProject"
+            target="_blank"
+            title="Show on GitHub"
+            >| Our Project <i class="fa-brands fa-github"></i
+          ></a>
+        </p>
+      </footer>
+    </main>
 
     <script src="./modules/main.js" type="module"></script>
   </body>

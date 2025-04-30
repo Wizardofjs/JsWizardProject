@@ -1,0 +1,57 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+/* Base Variables */
+:root {
+  /* Colors */
+  --color-primary: #ffd700;
+  --color-primary-light: #ffd70080;
+  --color-light: #e0e0e0;
+  --color-light-v2: #f0f0f0;
+  --color-dark: #050a16;
+  --color-dark-v2: #0a1a3d;
+  --color-dark-v3: #021a3f;
+  --color-blue: #2e3f7a;
+  --color-text-shadow: #ffffff4d;
+
+  /* Sizes */
+  --size-0: 0;
+  --size-1: 3px;
+  --size-xs: 8px;
+  --size-s: 10px;
+  --size-m: 15px;
+  --size-l: 20px;
+  --size-xl: 100px;
+
+  /* Gaps  */
+  --gap-xs: 8px;
+  --gap-s: 10px;
+
+  /* Font Sizes with clamp */
+  --font-size: clamp(1rem, 2vw, 1.8rem);
+  --font-size-s: clamp(0.7rem, 1.2vw, 0.9rem);
+  --font-size-m: clamp(1rem, 1.4vw, 1.3rem);
+  --font-size-l: clamp(1.4rem, 2.2vw, 1.7rem);
+  --font-size-xl: clamp(2rem, 2.6vw, 2.2rem);
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: var(--size-0);
+  padding: var(--size-0);
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(135deg, var(--color-dark-v2), var(--color-blue));
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-light);
+  cursor: url('../img/wand.png') 1 1, pointer;
+  padding: var(--size-0) 10%;
+}

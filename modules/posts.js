@@ -1,20 +1,24 @@
 import { getDataFromSessionStorage } from './fetch.js';
 import { showComments } from './comments.js';
+import { showUserDetails } from './user.js';
+import { renderTodos } from './todos.js';
 
 // Funktion för att skapa och returnera post-element
-function createPostElement(post, user) {
+function createPostElement(post, user, showHeader = true) {
   const article = document.createElement('article');
   article.classList.add('post');
   article.setAttribute('post-id', post.id);
   article.setAttribute('user-id', post.userId);
 
-  const header = document.createElement('header');
-  const h2 = document.createElement('h2');
-  const username = user ? user.name : 'Okänd användare';
-
-  h2.textContent = username;
-  header.appendChild(h2);
-  article.appendChild(header);
+  if (showHeader) {
+    const header = document.createElement('header');
+    const h2 = document.createElement('h2');
+    h2.classList.add('username');
+    const username = user ? user.name : 'Okänd användare';
+    h2.textContent = username;
+    header.appendChild(h2);
+    article.appendChild(header);
+  }
 
   const pContent = document.createElement('p');
   pContent.innerHTML = post.body.replace(/\n/g, '<br>');
@@ -27,14 +31,18 @@ function createPostElement(post, user) {
 export function showPosts() {
   const posts = getDataFromSessionStorage('posts');
   const users = getDataFromSessionStorage('users');
-  if (Array.isArray(posts) && posts.length > 0) {
-    const postsContainer = document.querySelector('.feed-div');
-    postsContainer.innerHTML = '';
+  const images = getDataFromSessionStorage('img');
+  const postsContainer = document.querySelector('.feed-div');
+  const fragment = document.createDocumentFragment();
 
+  // Rensa skeleton screens
+  postsContainer.innerHTML = '';
+
+  if (Array.isArray(posts) && posts.length > 0) {
     // Object för att hålla koll på vilken användare
     const seenUsers = new Set();
 
-    // Filtrera 1 post per användare
+    // Filter to show one post per user
     const uniquePosts = posts.filter((post) => {
       if (!seenUsers.has(post.userId)) {
         seenUsers.add(post.userId);
@@ -45,28 +53,69 @@ export function showPosts() {
 
     uniquePosts.forEach((post) => {
       const user = users.find((user) => user.id === post.userId);
-      postsContainer.appendChild(createPostElement(post, user));
+      const postElement = createPostElement(post, user);
+
+      // Add event listener for username click inside the post element
+      const usernameElement = postElement.querySelector('header h2');
+      if (usernameElement) {
+        usernameElement.addEventListener('click', () => {
+          const userImage = images.find(
+            (_img, index) => users[index]?.id === user.id
+          );
+          showAllPostUser(user.id);
+          showUserDetails(user, userImage?.image);
+          renderTodos(user.id);
+        });
+      }
+
+      fragment.appendChild(postElement);
     });
+
+    postsContainer.appendChild(fragment);
   } else {
     console.log('No posts data available in sessionStorage.');
   }
 }
 
-// Funktion för att visa alla inlägg från en användare
+// Function to show all posts from a user
 export function showAllPostUser(userId) {
   const posts = getDataFromSessionStorage('posts');
   const users = getDataFromSessionStorage('users');
+  const postsContainer = document.querySelector('.feed-div');
+  const fragment = document.createDocumentFragment();
+
+  postsContainer.innerHTML = '';
+
   if (Array.isArray(posts) && posts.length > 0) {
-    const postsContainer = document.querySelector('.feed-div');
-    postsContainer.innerHTML = '';
+    const user = users.find((u) => u.id === userId);
+    if (user) {
+      const header = document.createElement('header');
+      header.classList.add('user-header');
+
+      const backButton = document.createElement('button');
+      backButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
+      backButton.classList.add('back-button');
+      backButton.addEventListener('click', () => {
+        location.reload();
+      });
+
+      const userHeader = document.createElement('h2');
+      userHeader.textContent = `All post of ${user.name}`;
+
+      header.appendChild(backButton);
+
+      header.appendChild(userHeader);
+      fragment.appendChild(header);
+    }
 
     posts
       .filter((post) => post.userId === userId)
       .forEach((post) => {
         const user = users.find((u) => u.id === post.userId);
-        postsContainer.appendChild(createPostElement(post, user));
+        fragment.appendChild(createPostElement(post, user, false));
       });
 
+    postsContainer.appendChild(fragment);
     showComments();
   } else {
     console.log('No posts data available in sessionStorage.');

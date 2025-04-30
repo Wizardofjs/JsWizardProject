@@ -1,0 +1,43 @@
+/* Main Layout */
+.container {
+  background: var(--color-dark-v3);
+  display: grid;
+  grid-template-columns: 1.2fr 2.2fr 1fr;
+  grid-template-rows: clamp(60px, 8vh, 80px) 1fr clamp(30px, 4vh, 40px);
+  height: 100vh;
+}
+
+/* Containers */
+.left-container,
+.others-div {
+  background: #2a3a6a;
+  box-shadow: var(--shadow-sm);
+  overflow-y: auto;
+  padding: var(--size-m);
+}
+
+.left-container {
+  display: none;
+  grid-column: 1;
+  transition: transform var(--transition-fast);
+}
+
+.feed-div {
+  background: transparent;
+  grid-column: 2;
+  margin: var(--size-m);
+  overflow-y: auto;
+  padding-right: var(--size-m);
+}
+
+.others-div {
+  grid-column: 3;
+  height: 100%;
+  margin: var(--size-m);
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
