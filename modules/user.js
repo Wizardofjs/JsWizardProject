@@ -119,21 +119,18 @@ export function showUserDetails(user, img) {
 }
 
 
-// Hämtar referenser till knappen och dropdown-innehållet
+
 const dropdownBtn = document.querySelector('.dropdown-btn');
 const dropdownContent = document.querySelector('.dropdown-content');
 
 // Eventlyssnare för att toggla visning av dropdown
 dropdownBtn.addEventListener('click', () => {
-  // Växla "show"-klassen på dropdown-content
   dropdownContent.classList.toggle('show'); 
   
-  // Kolla om dropdown-content är synlig eller inte
+
   if (dropdownContent.classList.contains('show')) {
-    // Om den är synlig, flytta användarna till dropdown
     moveUsersToDropdown(true);
   } else {
-    // Om den inte är synlig, flytta tillbaka användarna till .others-div
     moveUsersToDropdown(false);
   }
 });
@@ -152,7 +149,7 @@ function moveUsersToDropdown(isOpen) {
     const othersDiv = document.querySelector('.others-div');
     const userButtons = document.querySelectorAll('.other-user');
     
-    if (window.innerWidth <= 900) {
+    if (window.innerWidth <= 1000) {
       if (isOpen) {
         userButtons.forEach(button => {
           dropdownContent.appendChild(button);

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -25,7 +25,7 @@ body {
   border-radius: 0;
 }
 
-/* Header */
+
 .header {
   font-family: 'Poppins', sans-serif;
   display: flex;
@@ -122,7 +122,7 @@ body {
     overflow: hidden; 
   }
 
-/* User-div */
+
 .user-div {
   grid-column: 1;
   padding: 15px;
@@ -173,7 +173,7 @@ body {
   text-decoration: underline;
 }
 
-/* Feed-div */
+
 .feed-div {
   color: black;
   grid-column: 2;
@@ -245,7 +245,7 @@ body {
 
 
 
-/* Others-div */
+
 .others-div {
   grid-column: 3;
   padding: 15px;
@@ -330,7 +330,7 @@ body {
   filter:opacity(85%);
 
 }
-/* Responsive design */
+
 @media (max-width: 900px) {
   .container {
     grid-template-columns: 1fr;
@@ -394,9 +394,9 @@ body {
 
 }
 
-/* När den är synlig (toggled) */
+
 .dropdown-content.show {
-  display: block; /* Gör dropdown synlig */
+  display: block; 
 }
   .others-div{
     display: none;
@@ -467,7 +467,7 @@ body {
   border-top: 1px solid rgba(128, 128, 128, 0.444);
   line-height: 20px;
 }
-/* storlek på checkmark */
+
 .todos-item i {
   font-size: 24px;
   margin-right: 10px;
@@ -475,5 +475,7 @@ body {
 .todos-title {
   margin: 0;
 }
+
 /* .................... */
 
+/*
