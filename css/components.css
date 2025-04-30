@@ -26,6 +26,10 @@ footer {
   transform: scale(1.2);
 }
 
+.dropdown-btn{
+  display: none;
+}
+
 .user-header {
   color: var(--color-light);
   display: flex;

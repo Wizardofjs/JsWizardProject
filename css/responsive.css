@@ -8,6 +8,7 @@
 
   .header {
     position: fixed; 
+    display: flex;
     top: 0; 
     left: 0; 
     width: 100%; 
@@ -16,6 +17,57 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   
   }
+
+  .navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dropdown-btn{
+    position: absolute;
+    display: block;
+    right: 0;
+    margin-right: 40px;
+    background-color: #1b2e5c;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    
+  }
+
+  .dropdown-btn i{
+    color: white;
+    
+  }
+  
+  .dropdown-content.show {
+    display: block; 
+  }
+
+
+.dropdown-content {
+  display: none; 
+  position: absolute;
+  top:0;
+  right:0;
+  margin-top: 53px;
+  margin-right: 35px;
+  background-color: #1b2e5c;
+  border-radius: 10px;
+  padding: 10px;
+
+
+}
+
+
+.dropdown-content.show {
+  display: block; 
+}
+  .others-div{
+    display: none;
+  }
+
 
   .others-div,
   .feed-div,

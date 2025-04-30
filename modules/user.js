@@ -1,7 +1,10 @@
 import { getDataFromSessionStorage } from './fetch.js';
 import { showAllPostUser } from './posts.js';
-import { renderTodos } from './todos.js';
-import { showUserDiv, startBroomAnimation, scrollAllToTop } from './ui.js';
+
+import { showUserDiv } from './ui.js';
+
+
+window.addEventListener('resize', moveUsersToDropdown);
 
 export function loadUsers() {
   try {
@@ -113,4 +116,58 @@ export function showUserDetails(user, img) {
   setTimeout(() => {
     scrollAllToTop(); //Scrolla upp efter uppdatering av DOM
   }, 100)
+}
+
+
+
+const dropdownBtn = document.querySelector('.dropdown-btn');
+const dropdownContent = document.querySelector('.dropdown-content');
+
+// Eventlyssnare för att toggla visning av dropdown
+dropdownBtn.addEventListener('click', () => {
+  dropdownContent.classList.toggle('show'); 
+  
+
+  if (dropdownContent.classList.contains('show')) {
+    moveUsersToDropdown(true);
+  } else {
+    moveUsersToDropdown(false);
+  }
+});
+
+// Stänger dropdown om man klickar utanför
+window.addEventListener('click', (e) => {
+  if (!dropdownBtn.contains(e.target) && !dropdownContent.contains(e.target)) {
+    dropdownContent.classList.remove('show'); // Ta bort "show"-klassen
+    moveUsersToDropdown(false); // Flytta tillbaka användarna till .others-div
+  }
+});
+
+// Funktion som anropas för att flytta användarna till eller från dropdownen
+function moveUsersToDropdown(isOpen) {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const othersDiv = document.querySelector('.others-div');
+    const userButtons = document.querySelectorAll('.other-user');
+    
+    if (window.innerWidth <= 1000) {
+      if (isOpen) {
+        userButtons.forEach(button => {
+          dropdownContent.appendChild(button);
+        });
+      } else {
+        userButtons.forEach(button => {
+          othersDiv.appendChild(button);
+        });
+      }
+
+      if (othersDiv) othersDiv.style.display = 'none';
+    } else {
+      userButtons.forEach(button => {
+        othersDiv.appendChild(button);
+      });
+
+      if (othersDiv) othersDiv.style.display = 'block';
+
+      dropdownContent.classList.remove('show');
+    }
 }
