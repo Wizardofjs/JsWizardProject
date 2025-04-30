@@ -102,6 +102,7 @@
   }
 
   #toggle-todos-btn {
+    cursor: url('../img/wand2.png') 0 0, auto;
     margin-top: 1rem;
     background: none;
     color: var(--color-light);
