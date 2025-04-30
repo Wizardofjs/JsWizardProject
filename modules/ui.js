@@ -121,10 +121,16 @@ export function loadMusic() {
 }
 
 export function scrollAllToTop() {
-  // Scrolla window direkt
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  // Vänta ett ögonblick så att DOM-hantering (t.ex. posts/todos) hinner uppdateras
+  const isMobile = window.innerWidth <= 768;
+  //På mobil, används document.documentElement.scrollTo för att säkerställa att hela dokumentet scrollas
+  if (isMobile) {
+    document.documentElement.scrollTo({ top: 0, behavior: 'smooth' }); // Scrolla hela sidan på mobil
+    document.body.scrollTo({ top: 0, behavior: 'smooth' }); // Fallback till body, om det behövs
+  } else {
+    //För desktop, används window.scrollTo()
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  //Ge lite tid för att vänta på att innehållet ska laddas ordentligt (särskilt för bilder och användardata)
   setTimeout(() => {
     const scrollTargets = [
       document.querySelector('.feed-div'),
@@ -136,7 +142,7 @@ export function scrollAllToTop() {
         el.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
-  }, 50); // Justera till 100ms vid behov
+  }, 150); //Anpassad för att ge tid för DOM-hantering och rendering
 }
 
 export function startBroomAnimation(event) {
