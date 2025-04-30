@@ -56,6 +56,10 @@
   padding: 10px;
 }
 
+.dropdown-content .other-user {
+  width: 100%;
+}
+
 .dropdown-content.show {
   display: block; 
 }
