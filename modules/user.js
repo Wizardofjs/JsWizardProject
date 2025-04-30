@@ -34,9 +34,8 @@ export function loadUsers() {
         showAllPostUser(user.id);
         startBroomAnimation(event);
       });
-      console.log(`Bild för ${user.name}:`, userImage?.image);
     });
-    console.log(statusMap);
+
     sessionStorage.setItem('statusMap', JSON.stringify(statusMap));
     userDiv.appendChild(fragment);
   } catch (error) {
@@ -64,7 +63,17 @@ export function showUserDetails(user, img) {
 
   showUserDiv();
 
+  // Initialize todo container state based on screen size
+  const isFullscreen = window.innerWidth >= 768; // Mobile breakpoint
+  todosContainer.style.display = isFullscreen ? 'block' : 'none';
+  todosContainer.classList.toggle('show', isFullscreen);
+
   const toggleBtn = document.getElementById('toggle-todos-btn');
+  toggleBtn.innerHTML = isFullscreen
+    ? 'Todo List <i class="fa fa-arrow-up" aria-hidden="true"></i>'
+    : 'Todo List <i class="fa fa-arrow-down" aria-hidden="true"></i>';
+
+  // Toggle button event listener
   toggleBtn.addEventListener('click', () => {
     const isHidden = !todosContainer.classList.contains('show');
 
@@ -80,6 +89,24 @@ export function showUserDetails(user, img) {
       setTimeout(() => {
         todosContainer.style.display = 'none';
       }, 400);
+      toggleBtn.innerHTML =
+        'Todo List <i class="fa fa-arrow-down" aria-hidden="true"></i>';
+    }
+  });
+
+  // Handle window resize to update visibility
+  window.addEventListener('resize', () => {
+    const isNowFullscreen = window.innerWidth >= 1000;
+    if (isNowFullscreen) {
+      // Fullscreen: show container by default
+      todosContainer.style.display = 'block';
+      todosContainer.classList.add('show');
+      toggleBtn.innerHTML =
+        'Todo List <i class="fa fa-arrow-up" aria-hidden="true"></i>';
+    } else {
+      // Mobile: hide container by default
+      todosContainer.style.display = 'none';
+      todosContainer.classList.remove('show');
       toggleBtn.innerHTML =
         'Todo List <i class="fa fa-arrow-down" aria-hidden="true"></i>';
     }
