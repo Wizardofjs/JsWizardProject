@@ -30,7 +30,7 @@ export function loadUsers() {
 
       const userImage = images[index];
 
-      // Event listener for user button clicks
+      // Event listener för klick på användare
       userElement.addEventListener('click', () => {
         showUserDetails(user, userImage?.image);
         renderTodos(user.id);
@@ -46,7 +46,7 @@ export function loadUsers() {
   }
 }
 
-// Function to show user details
+// Funktion för att visa detaljer om användaren
 export function showUserDetails(user, img) {
   const userDiv = document.querySelector('.user-ui');
   const todosContainer = document.querySelector('.todos-container');
@@ -65,7 +65,7 @@ export function showUserDetails(user, img) {
 
   showUserDiv();
 
-  // Initialize todo container state based on screen size
+  // Initiera todo container baserat på skärmstorleken
   const isFullscreen = window.innerWidth >= 768; 
   todosContainer.style.display = isFullscreen ? 'block' : 'none';
   todosContainer.classList.toggle('show', isFullscreen);
@@ -75,7 +75,7 @@ export function showUserDetails(user, img) {
     ? 'Todo List <i class="fa fa-arrow-up" aria-hidden="true"></i>'
     : 'Todo List <i class="fa fa-arrow-down" aria-hidden="true"></i>';
 
-  // Toggle button event listener
+  // Event listener för toggle knapp
   toggleBtn.addEventListener('click', () => {
     const isHidden = !todosContainer.classList.contains('show');
 
@@ -96,7 +96,7 @@ export function showUserDetails(user, img) {
     }
   });
 
-  // Handle window resize to update visibility
+  // Hanterar window resize för att uppdatera synligheten
   window.addEventListener('resize', () => {
     const isNowFullscreen = window.innerWidth >= 1000;
     if (isNowFullscreen) {
@@ -106,7 +106,7 @@ export function showUserDetails(user, img) {
       toggleBtn.innerHTML =
         'Todo List <i class="fa fa-arrow-up" aria-hidden="true"></i>';
     } else {
-      // Mobile: hide container by default
+      // Gömmer containern i mobilläge
       todosContainer.style.display = 'none';
       todosContainer.classList.remove('show');
       toggleBtn.innerHTML =
@@ -138,8 +138,8 @@ dropdownBtn.addEventListener('click', () => {
 // Stänger dropdown om man klickar utanför
 window.addEventListener('click', (e) => {
   if (!dropdownBtn.contains(e.target) && !dropdownContent.contains(e.target)) {
-    dropdownContent.classList.remove('show'); // Ta bort "show"-klassen
-    moveUsersToDropdown(false); // Flytta tillbaka användarna till .others-div
+    dropdownContent.classList.remove('show'); 
+    moveUsersToDropdown(false); 
   }
 });
 

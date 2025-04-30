@@ -1,4 +1,4 @@
-/* Headline Effects */
+/* Headline Effekter */
 #headline::after {
   background: linear-gradient(
     45deg,
@@ -27,7 +27,7 @@
   opacity: 1;
 }
 
-/* Welcome Div Effects */
+/* Welcome Div Effekter */
 .welcome-div::after {
   animation: glowing-background 4s linear infinite;
   background: linear-gradient(
@@ -49,7 +49,7 @@
   z-index: 1;
 }
 
-/* Other User Effects */
+/* Other User Effekter */
 .other-user::after {
   animation: glowing 40s linear infinite;
   background: linear-gradient(
@@ -78,12 +78,12 @@
   opacity: 1;
 }
 
-/* Like Button Effects */
+/* Like Button Effekter */
 .like-button.liked {
   animation: simpleGlow 1.5s ease-in-out forwards;
 }
 
-/* Star Effects */
+/* Star Effekter */
 .star {
   animation: confettiFall 1s ease-out forwards;
   font-size: 20px;
@@ -97,7 +97,7 @@
   z-index: 9999;
 }
 
-/* Broom Effects */
+/* Broom Effekter */
 .broom {
   animation: flyInBroom 5s ease-out forwards;
   position: absolute;
@@ -109,7 +109,7 @@
   width: 100px;
 }
 
-/* Animations */
+/* Animationer */
 @keyframes glowing {
   0% {
     background-position: 0 0;

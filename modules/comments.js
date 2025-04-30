@@ -1,4 +1,4 @@
-//FUnktion som returnerar alla kommentarer till ett visst inlägg
+//Funktion som returnerar alla kommentarer till ett visst inlägg
 function filterCommentsForPost(postId, comments) {
   return comments.filter((comment) => comment.postId === postId);
 }

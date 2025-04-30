@@ -39,10 +39,10 @@ export function showPosts() {
   postsContainer.innerHTML = '';
 
   if (Array.isArray(posts) && posts.length > 0) {
-    // Object för att hålla koll på vilken användare
+    // Objekt för att hålla koll på vilken användare
     const seenUsers = new Set();
 
-    // Filter to show one post per user
+    // Filter för att visa ett inlägg per användare
     const uniquePosts = posts.filter((post) => {
       if (!seenUsers.has(post.userId)) {
         seenUsers.add(post.userId);
@@ -55,7 +55,7 @@ export function showPosts() {
       const user = users.find((user) => user.id === post.userId);
       const postElement = createPostElement(post, user);
 
-      // Add event listener for username click inside the post element
+      // Eventlistener för klick på användare inuti ett inlägg
       const usernameElement = postElement.querySelector('header h2');
       if (usernameElement) {
         usernameElement.addEventListener('click', () => {
@@ -77,7 +77,7 @@ export function showPosts() {
   }
 }
 
-// Function to show all posts from a user
+// Funktion för att visa alla inlägg från en användare
 export function showAllPostUser(userId) {
   const posts = getDataFromSessionStorage('posts');
   const users = getDataFromSessionStorage('users');

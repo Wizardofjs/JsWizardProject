@@ -71,14 +71,14 @@
   .others-div,
   .feed-div,
   .left-container {
-    scrollbar-width: none; /* För Firefox */
-    -ms-overflow-style: none; /* För Internet Explorer och Edge */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
   }
 
   .others-div::-webkit-scrollbar,
   .feed-div::-webkit-scrollbar,
   .left-container::-webkit-scrollbar {
-    display: none; /* Dölj scroll-baren för WebKit-baserade webbläsare (Chrome, Safari, etc.) */
+    display: none; 
   }
 
   .container {
@@ -192,9 +192,9 @@
   display: flex;
   flex-direction: column;
   padding: var(--size-m);
-  background: var(--color-dark-v2); /* Mörk bakgrund för att matcha temat */
+  background: var(--color-dark-v2); 
   margin: 0;
-  border-bottom: 2px solid var(--color-dark); /* Matchar postens border */
+  border-bottom: 2px solid var(--color-dark); 
   border-radius: 8px;
 }
 
@@ -202,14 +202,14 @@
   flex-direction: row;
   align-items: center;
   gap: 8px;
-  background: #3a4a8a; /* Matchar other-user */
+  background: #3a4a8a; 
   margin: 8px 0;
 }
 
 .skeleton-post-title {
   width: 60%;
   height: 20px;
-  background: var(--color-light-v2); /* Ljusgrå för placeholder */
+  background: var(--color-light-v2); 
   border-radius: 4px;
   margin-bottom: 10px;
   animation: pulse 1.5s infinite;
@@ -227,7 +227,7 @@
   width: 24px;
   height: 24px;
   background: var(--color-light-v2);
-  border-radius: 50%; /* Cirkel för att matcha ikon */
+  border-radius: 50%; 
   animation: pulse 1.5s infinite;
 }
 

@@ -18,10 +18,10 @@ export function loadWand() {
       star.className = 'star';
       star.textContent = emojis[Math.floor(Math.random() * emojis.length)];
       star.style.color = colors[Math.floor(Math.random() * colors.length)];
-      star.style.left = `${e.clientX + window.scrollX - 1}px`; // Adjust for scroll and hotspot
-      star.style.top = `${e.clientY + window.scrollY - 1}px`; // Adjust for scroll and hotspot
+      star.style.left = `${e.clientX + window.scrollX - 1}px`; 
+      star.style.top = `${e.clientY + window.scrollY - 1}px`; 
 
-      // Random offset for confetti effect
+
       const xOffset = (Math.random() - 0.5) * 200 + 'px';
       const yOffset = (Math.random() - 0.5) * 300 + 'px';
       star.style.setProperty('--x', xOffset);
@@ -67,7 +67,7 @@ export function showUserDiv() {
   }
 }
 
-// Testar lite spännande musik (:
+
 
 export function loadMusic() {
   // Create audio element
@@ -142,11 +142,10 @@ export function scrollAllToTop() {
         el.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
-  }, 150); //Anpassad för att ge tid för DOM-hantering och rendering
+  }, 150); 
 }
 
 export function startBroomAnimation(event) {
-  // Only proceed if triggered by a button click with a valid position
   if (!event || !event.clientX || !event.clientY) return;
 
   const broomDiv = document.createElement('div');
@@ -160,7 +159,6 @@ export function startBroomAnimation(event) {
   broomDiv.appendChild(img);
   document.body.appendChild(broomDiv);
 
-  // Use the event's clientX/Y for positioning
   broomDiv.style.left = `${event.clientX}px`;
   broomDiv.style.top = `${event.clientY}px`;
 
