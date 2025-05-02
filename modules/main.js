@@ -1,4 +1,9 @@
-import { startPage, loadWand, renderSkeletonScreens } from './ui.js';
+import {
+  startPage,
+  loadWand,
+  renderSkeletonScreens,
+  removeLoadingBar,
+} from './ui.js';
 import { fetchAndStoreData } from './fetch.js';
 import { showPosts } from './posts.js';
 import { loadUsers } from './user.js';
@@ -12,6 +17,7 @@ async function init() {
     showPosts();
     loadWand();
     showComments();
+    removeLoadingBar(); // Ta bort laddningsindikatorn efter att data är laddad
   } catch (error) {
     console.error('Fel vid initiering:', error);
   }

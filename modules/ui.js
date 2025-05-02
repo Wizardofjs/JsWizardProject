@@ -117,6 +117,26 @@ export function startBroomAnimation(event) {
   });
 }
 
+// Funktion för att skapa och visa laddningsindikator
+function createLoadingBar() {
+  const loadingBarContainer = document.createElement('div');
+  loadingBarContainer.classList.add('loading-bar-container');
+
+  const loadingBar = document.createElement('div');
+  loadingBar.classList.add('loading-bar');
+
+  loadingBarContainer.appendChild(loadingBar);
+  document.body.appendChild(loadingBarContainer);
+}
+
+// Funktion för att ta bort laddningsindikator
+export function removeLoadingBar() {
+  const loadingBarContainer = document.querySelector('.loading-bar-container');
+  if (loadingBarContainer) {
+    loadingBarContainer.remove();
+  }
+}
+
 /* Skeleton vid laddning */
 export function renderSkeletonScreens(postCount = 6, userCount = 6) {
   const postsContainer = document.querySelector('.feed-div');
@@ -126,14 +146,26 @@ export function renderSkeletonScreens(postCount = 6, userCount = 6) {
   postsContainer.innerHTML = '';
   usersContainer.innerHTML = '';
 
+  // Skapar laddningsindikator
+  createLoadingBar();
+
   // Skapar skeleton posts
   for (let i = 0; i < postCount; i++) {
     const skeletonPost = document.createElement('div');
     skeletonPost.classList.add('skeleton-post');
-    skeletonPost.innerHTML = `
-      <div class="skeleton-post-title"></div>
-      <div class="skeleton-post-content"></div>
+    let skeletonHTML = `
+    <div class="skeleton-post-title"></div>
+    <div class="skeleton-post-content"></div>
+  `;
+    // Lägg till spinnande laddare i första skeleton-posten
+    if (i === 0) {
+      skeletonHTML += `
+      <div class="spinner-container">
+        <div class="spinner"></div>
+      </div>
     `;
+    }
+    skeletonPost.innerHTML = skeletonHTML;
     postsContainer.appendChild(skeletonPost);
   }
 
