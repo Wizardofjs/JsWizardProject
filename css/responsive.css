@@ -6,6 +6,11 @@
     overflow-y: scroll;
   }
 
+
+  ::-webkit-scrollbar {
+    width: 1.5px;
+  }
+
   .header {
     position: fixed; 
     display: flex;
@@ -68,18 +73,7 @@
   }
 
 
-  .others-div,
-  .feed-div,
-  .left-container {
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
-  }
 
-  .others-div::-webkit-scrollbar,
-  .feed-div::-webkit-scrollbar,
-  .left-container::-webkit-scrollbar {
-    display: none; 
-  }
 
   .container {
     gap: 5px;
