@@ -413,23 +413,27 @@ footer a:hover {
 
 /* Snurrande laddare */
 .spinner-container {
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); /
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  z-index: 9999; 
+  pointer-events: none; 
 }
 
 .spinner {
   width: 40px;
   height: 40px;
   border: 5px solid rgba(255, 255, 255, 0.3);
-  border-top: 5px solid #ffd11a; /* Använd en färg från din palett */
+  border-top: 5px solid #ffd11a; 
   border-radius: 50%;
   animation: spin 1s linear infinite;
   position: relative;
 }
 
-/* Lägg till en subtil glödeffekt för magisk känsla */
 .spinner::before {
   content: '';
   position: absolute;
@@ -443,13 +447,4 @@ footer a:hover {
     rgba(255, 209, 26, 0) 70%
   );
   border-radius: 50%;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
