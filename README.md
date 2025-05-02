@@ -91,3 +91,17 @@ Project/
 ├── index.html
 └── README.md
 ```
+
+## Preview
+
+<div style="display: flex; justify-content: center; padding: 2rem; gap: 1rem; margin: auto;">
+  <div style="text-align: center;">
+    <img src="https://wizardofjs.github.io/JsWizardProject/img/Preview.png" alt="Desktop Preview"/>
+    <p><a href="https://wizardofjs.github.io/JsWizardProject/img/Preview.png" target="_blank" title="View larger Desktop Preview" style="color:rgb(239, 255, 20); text-decoration: underline;">Desktop View</a></p>
+  </div>
+  <div style="text-align: center;">
+    <img src="https://wizardofjs.github.io/JsWizardProject/img/PreviewMobile.png" alt="Mobile Preview"/>
+    <p><a href="https://wizardofjs.github.io/JsWizardProject/img/PreviewMobile.png" target="_blank" title="View larger Small Screen Preview" style="color:rgb(239, 255, 20); text-decoration: underline;">Small Screen View</a></p>
+
+  </div>
+</div>
