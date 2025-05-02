@@ -66,8 +66,6 @@ Att tillsammans skapa en modern, användarvänlig och responsiv webbplats med fo
 
 ```bash
 Project/
-├── audio/
-│   └── Our-Mountain.mp3
 ├── css/
 │   ├── base.css
 │   ├── components.css
