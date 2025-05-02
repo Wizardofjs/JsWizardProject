@@ -76,6 +76,8 @@ Project/
 ├── img/
 │   ├── broom.png
 │   ├── favicon.ico
+│   ├── Preview.png
+│   └── PreviewMobile.png
 │   ├── wand.png
 │   ├── wand2.png
 │   └── welcomeimage.jpg
