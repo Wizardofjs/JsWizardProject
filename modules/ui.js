@@ -18,9 +18,8 @@ export function loadWand() {
       star.className = 'star';
       star.textContent = emojis[Math.floor(Math.random() * emojis.length)];
       star.style.color = colors[Math.floor(Math.random() * colors.length)];
-      star.style.left = `${e.clientX + window.scrollX - 1}px`; 
-      star.style.top = `${e.clientY + window.scrollY - 1}px`; 
-
+      star.style.left = `${e.clientX + window.scrollX - 1}px`;
+      star.style.top = `${e.clientY + window.scrollY - 1}px`;
 
       const xOffset = (Math.random() - 0.5) * 200 + 'px';
       const yOffset = (Math.random() - 0.5) * 300 + 'px';
@@ -89,7 +88,7 @@ export function scrollAllToTop() {
         el.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
-  }, 150); 
+  }, 150);
 }
 
 export function startBroomAnimation(event) {
@@ -116,4 +115,36 @@ export function startBroomAnimation(event) {
   broomDiv.addEventListener('animationend', () => {
     broomDiv.remove();
   });
+}
+
+/* Skeleton vid laddning */
+export function renderSkeletonScreens(postCount = 6, userCount = 6) {
+  const postsContainer = document.querySelector('.feed-div');
+  const usersContainer = document.querySelector('.others-div');
+
+  // Rensar containers innan
+  postsContainer.innerHTML = '';
+  usersContainer.innerHTML = '';
+
+  // Skapar skeleton posts
+  for (let i = 0; i < postCount; i++) {
+    const skeletonPost = document.createElement('div');
+    skeletonPost.classList.add('skeleton-post');
+    skeletonPost.innerHTML = `
+      <div class="skeleton-post-title"></div>
+      <div class="skeleton-post-content"></div>
+    `;
+    postsContainer.appendChild(skeletonPost);
+  }
+
+  // Skapar skeleton users
+  for (let i = 0; i < userCount; i++) {
+    const skeletonUser = document.createElement('div');
+    skeletonUser.classList.add('skeleton-user');
+    skeletonUser.innerHTML = `
+      <div class="skeleton-user-icon"></div>
+      <div class="skeleton-user-text"></div>
+    `;
+    usersContainer.appendChild(skeletonUser);
+  }
 }
